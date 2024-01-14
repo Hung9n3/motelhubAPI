@@ -1,0 +1,23 @@
+﻿<Properties>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MotelHubApi.Domain/Entities/Area.cs">
+    <Files>
+      <File FileName="MotelHubApi.Domain/Entities/User.cs" Line="7" Column="5" />
+      <File FileName="MotelHubApi.Domain/Entities/Area.cs" Line="2" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MotelHubApi" expanded="True">
+            <Node name="MotelHubApi.Domain" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

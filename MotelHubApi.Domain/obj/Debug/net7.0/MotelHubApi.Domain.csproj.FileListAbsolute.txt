@@ -1,0 +1,12 @@
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/bin/Debug/net7.0/MotelHubApi.Domain.deps.json
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/bin/Debug/net7.0/MotelHubApi.Domain.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/bin/Debug/net7.0/MotelHubApi.Domain.pdb
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.csproj.AssemblyReference.cache
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.AssemblyInfoInputs.cache
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.AssemblyInfo.cs
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.csproj.CoreCompileInputs.cache
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/refint/MotelHubApi.Domain.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.pdb
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/ref/MotelHubApi.Domain.dll
