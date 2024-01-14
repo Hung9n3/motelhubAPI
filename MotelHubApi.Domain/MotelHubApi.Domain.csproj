@@ -15,7 +15,6 @@
     <None Remove="Enums\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\Base\" />
     <Folder Include="Enums\" />
   </ItemGroup>
   <ProjectExtensions>

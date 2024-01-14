@@ -1,5 +1,4 @@
-﻿using System;
-namespace MotelHubApi;
+﻿namespace MotelHubApi;
 
 public class Area : BaseEntity
 {

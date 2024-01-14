@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MotelHubApi;
+﻿namespace MotelHubApi;
 /// <summary>
 /// Bill can not deleted so it should has all needed info
 /// </summary>
