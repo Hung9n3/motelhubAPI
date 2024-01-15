@@ -1,17 +1,43 @@
 ﻿<Properties>
+  <MonoDevelop.Ide.ItemProperties.MotelHubApi.Persistence FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MotelHubApi.Domain/Entities/Area.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MotelHubApi.Infrastructure/Extensions/ServiceExtensions.cs">
     <Files>
-      <File FileName="MotelHubApi.Domain/Entities/User.cs" Line="7" Column="5" />
-      <File FileName="MotelHubApi.Domain/Entities/Area.cs" Line="2" Column="23" />
+      <File FileName="MotelHubApi.Application/Features/Room/Commands/CreateRoom/RoomCreatedEvent.cs" Line="9" Column="20" />
+      <File FileName="MotelHubApi.Application/Features/Room/Queries/GetByArea/GetByAreaQuery.cs" Line="29" Column="119" />
+      <File FileName="MotelHubApi.Application/Features/Room/Queries/GetByArea/GetByAreaDto.cs" Line="4" Column="42" />
+      <File FileName="MotelHubApi.Application/Interfaces/Repositories/IBaseRepository.cs" Line="5" Column="19" />
+      <File FileName="MotelHubApi.Application/Interfaces/UnitOfWork/IUnitOfWork.cs" Line="6" Column="24" />
+      <File FileName="MotelHubApi.Domain/Commons/IMapFrom.cs" Line="8" Column="70" />
+      <File FileName="MotelHubApi.Domain/Commons/BaseEvent.cs" Line="6" Column="42" />
+      <File FileName="MotelHubApi.Application/Features/Room/Commands/CreateRoom/CreateRoomCommand.cs" Line="29" Column="1" />
+      <File FileName="MotelHubApi.Application/Interfaces/Services/IEmailService.cs" Line="6" Column="25" />
+      <File FileName="MotelHubApi.Application/DTOs/EmailRequestDto.cs" Line="4" Column="84" />
+      <File FileName="MotelHubApi.Application/Extensions/ServiceExtension.cs" Line="19" Column="65" />
+      <File FileName="MotelHubApi.Infrastructure/Services/EmailService.cs" Line="14" Column="55" />
+      <File FileName="MotelHubApi.Infrastructure/Extensions/ServiceExtensions.cs" Line="15" Column="17" />
+      <File FileName="MotelHubApi.Persistence/Contexts/MotelHubSqlServerDbContext.cs" Line="2" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MotelHubApi" expanded="True">
-            <Node name="MotelHubApi.Domain" selected="True" />
+            <Node name="MotelHubApi.Application">
+              <Node name="DTOs" expanded="True" />
+              <Node name="Features" expanded="True">
+                <Node name="Room" expanded="True">
+                  <Node name="Queries" expanded="True">
+                    <Node name="GetByArea" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="MotelHubApi.Domain" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="MotelHubApi.Persistence" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -20,4 +46,5 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MotelHubApi.Infrastructure FirstBuild="True" />
 </Properties>

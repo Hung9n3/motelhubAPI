@@ -14,7 +14,7 @@ public class Contract : BaseEntity
     public string? HostPhone { get; set; }
     public string? CustomerName { get; set; }
     public string? CustomerPhone { get; set; }
-    public string? Address { get; set; }
+    public string? RoomAddress { get; set; }
     public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set;}
     public DateTime? CancelDate { get; set; }

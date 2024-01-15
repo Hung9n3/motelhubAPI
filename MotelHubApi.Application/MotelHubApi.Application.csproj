@@ -7,8 +7,57 @@
     <RootNamespace>MotelHubApi</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\MotelHubApi.Domain\MotelHubApi.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="Commons\" />
+    <None Remove="DTOs\" />
+    <None Remove="Interfaces\Repositories\" />
+    <None Remove="Interfaces\Services\" />
+    <None Remove="Commons\Mappings\" />
+    <None Remove="Features\" />
+    <None Remove="Features\Room\" />
+    <None Remove="Interfaces\UnitOfWork\" />
+    <None Remove="Features\Room\Commands\" />
+    <None Remove="Features\Room\Queries\" />
+    <None Remove="Features\Room\Commands\CreateRoom\" />
+    <None Remove="Features\Room\Queries\GetByArea\" />
+    <None Remove="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Commons\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Interfaces\Services\" />
+    <Folder Include="Commons\Mappings\" />
+    <Folder Include="Features\" />
+    <Folder Include="Features\Room\" />
+    <Folder Include="Interfaces\UnitOfWork\" />
+    <Folder Include="Features\Room\Commands\" />
+    <Folder Include="Features\Room\Queries\" />
+    <Folder Include="Features\Room\Commands\CreateRoom\" />
+    <Folder Include="Features\Room\Queries\GetByArea\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="None" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

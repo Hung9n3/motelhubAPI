@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.Domain", "Motel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Application", "MotelHubApi.Application\MotelHubApi.Application.csproj", "{E83EAC8E-6A2D-4712-AFAC-A99CCCD550D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Infrastructure", "MotelHubApi.Infrastructure\MotelHubApi.Infrastructure.csproj", "{BDE07713-0854-4AED-99BA-F68F15CA1B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Persistence", "MotelHubApi.Persistence\MotelHubApi.Persistence.csproj", "{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{E83EAC8E-6A2D-4712-AFAC-A99CCCD550D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E83EAC8E-6A2D-4712-AFAC-A99CCCD550D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E83EAC8E-6A2D-4712-AFAC-A99CCCD550D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE07713-0854-4AED-99BA-F68F15CA1B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE07713-0854-4AED-99BA-F68F15CA1B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE07713-0854-4AED-99BA-F68F15CA1B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE07713-0854-4AED-99BA-F68F15CA1B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

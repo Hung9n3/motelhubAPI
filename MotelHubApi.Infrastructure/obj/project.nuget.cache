@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "tPXJZ86Q6arCyY3Uhx6oD6vgppn440adgq8TR4iZS5e6fTkzBtC6USvssIO8AococXPqW9cuZNjTYmyqCh+fHg==",
+  "success": true,
+  "projectFilePath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/MotelHubApi.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/Users/wave5dev/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.15/microsoft.aspnetcore.cryptography.internal.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.15/microsoft.aspnetcore.cryptography.keyderivation.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/7.0.15/microsoft.aspnetcore.identity.entityframeworkcore.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.entityframeworkcore/7.0.15/microsoft.entityframeworkcore.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.15/microsoft.entityframeworkcore.abstractions.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.15/microsoft.entityframeworkcore.analyzers.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.15/microsoft.entityframeworkcore.relational.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.caching.memory/7.0.0/microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.identity.core/7.0.15/microsoft.extensions.identity.core.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.identity.stores/7.0.15/microsoft.extensions.identity.stores.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.logging/7.0.0/microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
