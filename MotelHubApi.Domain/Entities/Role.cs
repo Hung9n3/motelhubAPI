@@ -3,5 +3,6 @@
 namespace MotelHubApi;
 
 public class Role : IdentityRole<int>, IEntity
-{ 
+{
+    public User? User { get; set; }
 }

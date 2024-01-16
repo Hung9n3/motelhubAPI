@@ -1,8 +1,10 @@
-﻿<Properties StartupConfiguration="{65EB502B-39D8-4659-A7A6-FB248577408B}|https" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.ItemProperties.MotelHubApi.Persistence FirstBuild="True" />
+﻿<Properties StartupConfiguration="{3705B4E0-46F2-4D0F-B71E-8987CDED1DA6}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <DisabledProjects>
+    <String>MotelHubApi.Presentation/MotelHubApi.WebApi.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workbench ActiveDocument="MotelHubApi.Shared/Class1.cs">
     <Files>
       <File FileName="MotelHubApi.Persistence/Repositories/Repository.cs" Line="5" Column="66" />
@@ -49,10 +51,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.MotelHubApi.WebApi FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.MotelHubApi.Shared FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.MotelHubApi.WebApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.MotelHubApi.Infrastructure FirstBuild="True" />
 </Properties>

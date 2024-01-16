@@ -1,0 +1,489 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/MotelHubApi.WebApi.csproj": {}
+  },
+  "projects": {
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj",
+        "projectName": "MotelHubApi.Application",
+        "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj",
+        "packagesPath": "/Users/wave5dev/.nuget/packages/",
+        "outputPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wave5dev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/MotelHubApi.Domain.csproj": {
+                "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/MotelHubApi.Domain.csproj"
+              },
+              "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/MotelHubApi.Shared.csproj": {
+                "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/MotelHubApi.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/MotelHubApi.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/MotelHubApi.Domain.csproj",
+        "projectName": "MotelHubApi.Domain",
+        "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/MotelHubApi.Domain.csproj",
+        "packagesPath": "/Users/wave5dev/.nuget/packages/",
+        "outputPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wave5dev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/MotelHubApi.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/MotelHubApi.Infrastructure.csproj",
+        "projectName": "MotelHubApi.Infrastructure",
+        "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/MotelHubApi.Infrastructure.csproj",
+        "packagesPath": "/Users/wave5dev/.nuget/packages/",
+        "outputPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wave5dev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj": {
+                "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/MotelHubApi.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/MotelHubApi.Persistence.csproj",
+        "projectName": "MotelHubApi.Persistence",
+        "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/MotelHubApi.Persistence.csproj",
+        "packagesPath": "/Users/wave5dev/.nuget/packages/",
+        "outputPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wave5dev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj": {
+                "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/MotelHubApi.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/MotelHubApi.Shared.csproj",
+        "projectName": "MotelHubApi.Shared",
+        "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/MotelHubApi.Shared.csproj",
+        "packagesPath": "/Users/wave5dev/.nuget/packages/",
+        "outputPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wave5dev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/MotelHubApi.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/MotelHubApi.WebApi.csproj",
+        "projectName": "MotelHubApi.WebApi",
+        "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/MotelHubApi.WebApi.csproj",
+        "packagesPath": "/Users/wave5dev/.nuget/packages/",
+        "outputPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wave5dev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/MotelHubApi.Infrastructure.csproj": {
+                "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/MotelHubApi.Infrastructure.csproj"
+              },
+              "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/MotelHubApi.Persistence.csproj": {
+                "projectPath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/MotelHubApi.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
