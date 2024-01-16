@@ -1,6 +1,6 @@
 ﻿namespace MotelHubApi;
 
-public interface IBaseRepository<T> where T : BaseEntity
+public interface IBaseRepository<T> where T : IEntity
 {
     IQueryable<T> Entities { get; }
 

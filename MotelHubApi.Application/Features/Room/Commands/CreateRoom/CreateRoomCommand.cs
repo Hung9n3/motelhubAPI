@@ -1,10 +1,17 @@
 ﻿using System;
 using AutoMapper;
 using MediatR;
+using MotelHubApi.Shared;
 
 namespace MotelHubApi;
 
-public record CreateRoomCommand(string? Name, int AreaId, int OwnerId, List<Photo> Photos) : IRequest<int>,IMapFrom<Room>;
+public class CreateRoomCommand : BaseRoomCommand, IRequest<int>
+{
+	public string Name { get; set; } = string.Empty;
+	public double Acreage { get; set; }
+    public int OwnerId { get; set; }
+    public List<Photo> Photos { get; set; } = new List<Photo>();
+}
 
 internal class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand,int>
 {
@@ -19,14 +26,7 @@ internal class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand,int>
 
 	public async Task<int> Handle(CreateRoomCommand command, CancellationToken cancellationToken = default)
 	{
-		var room = new Room
-		{
-			Name = command.Name,
-			AreaId = command.AreaId,
-			OwnerId = command.OwnerId,
-			Photos = command.Photos,
-		};
-
+		var room = _mapper.Map<Room>(command);
 		await _unitOfWork.Repository<Room>().AddAsync(room);
 		room.AddDomainEvent(new RoomCreatedEvent(room));
 		await _unitOfWork.Save(cancellationToken);

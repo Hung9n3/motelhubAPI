@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Reflection;
+using AutoMapper;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using MediatR;
 
 namespace MotelHubApi;
 
@@ -11,12 +11,17 @@ public static class ServiceExtension
     {
         services.AddAutoMapper();
         services.AddMediator();
-        //services.AddValidators();
+        services.AddValidators();
     }
 
     private static void AddAutoMapper(this IServiceCollection services)
     {
-        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        var mapperConfig = new MapperConfiguration(mc =>
+        {
+            mc.AddProfile(new MappingProfile());
+        });
+        IMapper mapper = mapperConfig.CreateMapper();
+        services.AddSingleton(mapper);
     }
 
     private static void AddMediator(this IServiceCollection services)
@@ -24,9 +29,9 @@ public static class ServiceExtension
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
     }
 
-    //private static void AddValidators(this IServiceCollection services)
-    //{
-    //    services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-    //}
+    private static void AddValidators(this IServiceCollection services)
+    {
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+    }
 }
 

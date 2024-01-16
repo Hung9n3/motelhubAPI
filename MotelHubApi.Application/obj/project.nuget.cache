@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "AAzqXsQAARoM+L+W6aNEFrvJ1OFV/3S257sQ+dSBw09RjD4jtNqL03TvHn+TPMzI/BEFoaGldBtdwbXRZjwhug==",
+  "dgSpecHash": "n8b2rxVm2rStGwFebU473ZDWteFN2ueDJ+oFQ5Yn8I//IhGQKCG5PR46C91K9dHxZfB0qRYwQq3jvLd1NQqSqw==",
   "success": true,
   "projectFilePath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj",
   "expectedPackageFiles": [
     "/Users/wave5dev/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/wave5dev/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.9.0/fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "/Users/wave5dev/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
     "/Users/wave5dev/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/wave5dev/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.15/microsoft.aspnetcore.cryptography.internal.7.0.15.nupkg.sha512",

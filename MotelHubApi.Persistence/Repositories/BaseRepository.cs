@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MotelHubApi.Persistence;
 
-public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
 {
     protected readonly MotelHubSqlServerDbContext _dbContext;
 

@@ -2,5 +2,5 @@
 
 public interface IRoomRepository : IBaseRepository<Room>
 {
-    Task<IEnumerable<Room>> GetByArea(int areaId);
+    Task<IEnumerable<Room>> GetByArea(int? areaId);
 }

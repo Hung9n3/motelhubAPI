@@ -2,6 +2,6 @@
 
 namespace MotelHubApi;
 
-public class Role : IdentityRole<int>
+public class Role : IdentityRole<int>, IEntity
 { 
 }

@@ -1,5 +1,5 @@
 ﻿namespace MotelHubApi;
 
-public interface IUserRepository
+public interface IUserRepository : IBaseRepository<User>
 {
 }

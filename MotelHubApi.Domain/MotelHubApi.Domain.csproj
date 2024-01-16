@@ -14,9 +14,11 @@
   <ItemGroup>
     <None Remove="Entities\Base\" />
     <None Remove="Enums\" />
+    <None Remove="Entities\ManyToMany\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+    <Folder Include="Entities\ManyToMany\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

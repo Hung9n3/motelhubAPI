@@ -1,4 +1,5 @@
 ﻿using System;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MotelHubApi.Infrastructure;
@@ -12,7 +13,10 @@ public static class ServiceExtensions
 
     private static void AddServices(this IServiceCollection services)
     {
-        services.AddTransient<IEmailService, EmailService>();
+        services
+                .AddTransient<IMediator, Mediator>()
+                .AddTransient<IDomainEventDispatcher, DomainEventDispatcher>()
+                .AddTransient<IEmailService, EmailService>();
     }
 }
 

@@ -2,7 +2,7 @@
 
 namespace MotelHubApi;
 
-public class BaseEntity
+public class BaseEntity : IEntity
 {
     private readonly List<BaseEvent> _domainEvents = new();
 

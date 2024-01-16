@@ -1,0 +1,17 @@
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Application.deps.json
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Application.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Application.pdb
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Domain.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Domain.pdb
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.csproj.AssemblyReference.cache
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.AssemblyInfoInputs.cache
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.AssemblyInfo.cs
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.csproj.CoreCompileInputs.cache
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.csproj.CopyComplete
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/refint/MotelHubApi.Application.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.pdb
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/ref/MotelHubApi.Application.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Shared.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Shared.pdb

@@ -10,14 +10,19 @@
     <None Remove="Extensions\" />
     <None Remove="Contexts\" />
     <None Remove="Repositories\" />
+    <None Remove="UnitOfWork\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Contexts\" />
     <Folder Include="Repositories\" />
+    <Folder Include="UnitOfWork\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MotelHubApi.Application\MotelHubApi.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.15" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
