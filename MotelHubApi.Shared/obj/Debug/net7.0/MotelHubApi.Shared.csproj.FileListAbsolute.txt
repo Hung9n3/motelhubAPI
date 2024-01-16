@@ -1,7 +1,6 @@
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/bin/Debug/net7.0/MotelHubApi.Shared.deps.json
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/bin/Debug/net7.0/MotelHubApi.Shared.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/bin/Debug/net7.0/MotelHubApi.Shared.pdb
-/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/MotelHubApi.Shared.csproj.AssemblyReference.cache
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/MotelHubApi.Shared.GeneratedMSBuildEditorConfig.editorconfig
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/MotelHubApi.Shared.AssemblyInfoInputs.cache
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/MotelHubApi.Shared.AssemblyInfo.cs
@@ -10,3 +9,4 @@
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/refint/MotelHubApi.Shared.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/MotelHubApi.Shared.pdb
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/ref/MotelHubApi.Shared.dll
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/obj/Debug/net7.0/MotelHubApi.Shared.sourcelink.json

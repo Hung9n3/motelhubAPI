@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace MotelHubApi.Persistence;
 
@@ -13,13 +14,22 @@ public static class ServiceExtensions
         services.AddRepositories();
     }
 
-    public static void AddDbContext(this IServiceCollection services, IConfiguration configuration, string connectionStringKey) 
+    public static void AddDbContext(this IServiceCollection services, IConfiguration configuration, string connectionStringKey)
     {
         var connectionString = configuration.GetConnectionString(connectionStringKey);
 
-        services.AddDbContext<MotelHubSqlServerDbContext>(options =>
-           options.UseSqlServer(connectionString,
-               builder => builder.MigrationsAssembly(typeof(MotelHubSqlServerDbContext).Assembly.FullName)), ServiceLifetime.Scoped);
+        var options = new DbContextOptions<MotelHubSqlServerDbContext>();
+        var builder = new DbContextOptionsBuilder<MotelHubSqlServerDbContext>(options);
+        builder.UseSqlServer(connectionString);
+        builder.EnableSensitiveDataLogging(false);
+
+        services.AddDbContext<MotelHubSqlServerDbContext>(options => {
+            options.UseSqlServer(connectionString, sqlServerOptionsAction => {
+                sqlServerOptionsAction.EnableRetryOnFailure();
+            });
+            options.EnableSensitiveDataLogging();
+        });
+
     }
 
     private static void AddRepositories(this IServiceCollection services)

@@ -11,13 +11,13 @@ public class BaseEntity : IEntity
     [NotMapped]
     public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents.AsReadOnly();
 
-    public DateTime CreateAt { get; set; }
+    public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
     public bool IsActive { get; set; }
 
     public BaseEntity()
     {
-        CreateAt = DateTime.UtcNow;
+        CreatedAt = DateTime.UtcNow;
         ModifiedAt = DateTime.UtcNow;
         IsActive = true;
     }

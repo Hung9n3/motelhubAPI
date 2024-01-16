@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n8b2rxVm2rStGwFebU473ZDWteFN2ueDJ+oFQ5Yn8I//IhGQKCG5PR46C91K9dHxZfB0qRYwQq3jvLd1NQqSqw==",
+  "dgSpecHash": "li2RYwinXwZCqIBrmD2QAw75frA1z5nLQdrIjKvO4kF2sW2xJkVQqsn0fWemfWplAzqsHYghGa6DSZZOo5Zf4A==",
   "success": true,
   "projectFilePath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/MotelHubApi.Application.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,9 @@
     "/Users/wave5dev/.nuget/packages/microsoft.extensions.logging/7.0.0/microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "/Users/wave5dev/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "/Users/wave5dev/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
-    "/Users/wave5dev/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "/Users/wave5dev/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.netcore.app.ref/7.0.15/microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "/Users/wave5dev/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.15/microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
   ],
   "logs": []
 }

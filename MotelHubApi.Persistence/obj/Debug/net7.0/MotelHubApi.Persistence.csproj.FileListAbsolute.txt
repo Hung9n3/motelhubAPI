@@ -17,3 +17,5 @@
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/obj/Debug/net7.0/ref/MotelHubApi.Persistence.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/bin/Debug/net7.0/MotelHubApi.Shared.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/bin/Debug/net7.0/MotelHubApi.Shared.pdb
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/bin/Debug/net7.0/MotelHubApi.Persistence.runtimeconfig.json
+/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Persistence/obj/Debug/net7.0/MotelHubApi.Persistence.genruntimeconfig.cache

@@ -26,6 +26,24 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
     public virtual DbSet<Bill> Bills { get; set; } = null!;
     public virtual DbSet<Photo> Photos { get; set; } = null!;
 
+    public override int SaveChanges()
+    {
+        var changedEntities = this.ChangeTracker.Entries()
+                                                .Where(x => x.State == EntityState.Added
+                                                         || x.State == EntityState.Modified);
+        foreach (var entity in changedEntities)
+        {
+            var dateTimeOffset = DateTime.UtcNow;
+
+            if (entity.State == EntityState.Added)
+            {
+                entity.Property(nameof(BaseEntity.CreatedAt)).CurrentValue = dateTimeOffset;
+            }
+            entity.Property(nameof(BaseEntity.ModifiedAt)).CurrentValue = dateTimeOffset;
+        }
+        return base.SaveChanges();
+    }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
