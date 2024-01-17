@@ -14,5 +14,10 @@ public class RoomRepository : BaseRepository<Room>, IRoomRepository
         var rooms = await base.Entities.Where(x => x.AreaId == areaId).Include(x => x.Owner).ToListAsync();
         return rooms;
     }
+
+    public DbContext GetDbContext()
+    {
+        return base._dbContext;
+    }
 }
 

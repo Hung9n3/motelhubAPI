@@ -551,6 +551,10 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -703,7 +707,7 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.User", "Host")
                         .WithMany("Areas")
                         .HasForeignKey("HostId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Host");
@@ -714,7 +718,7 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.Contract", "Contract")
                         .WithMany("Bills")
                         .HasForeignKey("ContractId")
-                        .OnDelete(DeleteBehavior.SetNull)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Contract");
@@ -725,17 +729,17 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.User", "Customer")
                         .WithMany("CustomerContracts")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.User", "Host")
                         .WithMany("HostContracts")
                         .HasForeignKey("HostId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.Room", "Room")
                         .WithMany("Contracts")
                         .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Customer");
 
@@ -753,7 +757,7 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.Room", "Room")
                         .WithMany("MeterReadings")
                         .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Owner");
 
@@ -765,7 +769,7 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.Area", "Area")
                         .WithMany("Photos")
                         .HasForeignKey("AreaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.Contract", null)
                         .WithMany("Photos")
@@ -774,17 +778,17 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.MeterReading", "MeterReading")
                         .WithMany("Photos")
                         .HasForeignKey("MeterReadingId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.Room", "Room")
                         .WithMany("Photos")
                         .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.User", "User")
                         .WithMany("Photos")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Area");
 
@@ -800,12 +804,12 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.Area", "Area")
                         .WithMany("Rooms")
                         .HasForeignKey("AreaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.User", "Owner")
                         .WithMany("OwnRooms")
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Area");
 
@@ -827,13 +831,13 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasOne("MotelHubApi.User", "Member")
                         .WithMany("UserRooms")
                         .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("MotelHubApi.Room", "Room")
                         .WithMany("UserRooms")
                         .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Member");

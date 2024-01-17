@@ -30,6 +30,11 @@
     <None Remove="Features\Room\Commands\CreateRoom\" />
     <None Remove="Features\Room\Queries\GetByArea\" />
     <None Remove="Extensions\" />
+    <None Remove="Features\Role\" />
+    <None Remove="Features\Role\Commands\" />
+    <None Remove="Features\Role\Queries\" />
+    <None Remove="Features\Area\" />
+    <None Remove="Features\Area\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
@@ -46,6 +51,11 @@
     <Folder Include="Features\Room\Commands\CreateRoom\" />
     <Folder Include="Features\Room\Queries\GetByArea\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Features\Role\" />
+    <Folder Include="Features\Role\Commands\" />
+    <Folder Include="Features\Role\Queries\" />
+    <Folder Include="Features\Area\" />
+    <Folder Include="Features\Area\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />

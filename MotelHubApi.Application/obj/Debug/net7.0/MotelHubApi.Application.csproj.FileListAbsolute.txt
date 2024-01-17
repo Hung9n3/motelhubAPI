@@ -15,4 +15,3 @@
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/ref/MotelHubApi.Application.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Shared.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/bin/Debug/net7.0/MotelHubApi.Shared.pdb
-/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Application/obj/Debug/net7.0/MotelHubApi.Application.sourcelink.json

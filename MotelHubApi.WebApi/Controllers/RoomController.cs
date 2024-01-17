@@ -11,8 +11,8 @@ public class RoomController : ApiControllerBase
 	{
 	}
 
-	[HttpGet("{areaId}")]
-	public async Task<IActionResult> Get(int? areaId)
+	[HttpGet("area/{areaId}")]
+	public async Task<IActionResult> GetByArea(int? areaId)
 	{
 		var result = await _mediator.Send(new GetRoomsByAreaQuery(areaId));
 		return Ok(result);

@@ -7,6 +7,15 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
+        #region User
+        CreateMap<RegisterDto, User>();
+
+        #endregion
+
+        #region Area
+        CreateMap<CreateAreaCommand, Area>();
+        #endregion
+
         #region Room
         CreateMap<CreateRoomCommand, Room>();
 

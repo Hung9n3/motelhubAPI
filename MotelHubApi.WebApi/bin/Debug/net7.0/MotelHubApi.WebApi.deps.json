@@ -786,6 +786,8 @@
       },
       "MotelHubApi.Infrastructure/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.15",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.15",
           "MotelHubApi.Application": "1.0.0"
         },
         "runtime": {

@@ -23,10 +23,12 @@
   <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="Controllers\Base\" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Controllers\Base\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MotelHubApi.Persistence\MotelHubApi.Persistence.csproj">

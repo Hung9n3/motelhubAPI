@@ -10,4 +10,3 @@
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/refint/MotelHubApi.Domain.dll
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.pdb
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/ref/MotelHubApi.Domain.dll
-/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Domain/obj/Debug/net7.0/MotelHubApi.Domain.sourcelink.json

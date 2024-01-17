@@ -13,21 +13,17 @@ public class CreateRoomCommand : BaseRoomCommand, IRequest<int>
     public List<Photo> Photos { get; set; } = new List<Photo>();
 }
 
-internal class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand,int>
+internal class CreateRoomCommandHandler : BaseHandler<Room, CreateRoomCommand, IRoomRepository,int>
 {
-	private readonly IUnitOfWork _unitOfWork;
-	private readonly IMapper _mapper;
-
-	public CreateRoomCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+	public CreateRoomCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IRoomRepository repository)
+		: base (unitOfWork, repository, mapper)
 	{
-		this._unitOfWork = unitOfWork;
-		this._mapper = mapper;
 	}
 
-	public async Task<int> Handle(CreateRoomCommand command, CancellationToken cancellationToken = default)
+	public override async Task<int> Handle(CreateRoomCommand command, CancellationToken cancellationToken = default)
 	{
-		var room = _mapper.Map<Room>(command);
-		await _unitOfWork.Repository<Room>().AddAsync(room);
+		var room = base._mapper.Map<Room>(command);
+		await base._repository.AddAsync(room);
 		room.AddDomainEvent(new RoomCreatedEvent(room));
 		await _unitOfWork.Save(cancellationToken);
 		return room.Id;

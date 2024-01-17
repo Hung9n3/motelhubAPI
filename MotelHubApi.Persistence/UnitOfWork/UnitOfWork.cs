@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Microsoft.EntityFrameworkCore;
 
 namespace MotelHubApi.Persistence;
 
@@ -33,6 +34,10 @@ public class UnitOfWork : IUnitOfWork
         return (IBaseRepository<T>)_repositories[type];
     }
 
+    public DbContext GetDbContext()
+    {
+        return this._dbContext;
+    }
     public Task Rollback()
     {
         _dbContext.ChangeTracker.Entries().ToList().ForEach(x => x.Reload());

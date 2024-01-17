@@ -1,16 +1,26 @@
-﻿using MotelHubApi;
-using MotelHubApi.Persistence;
-using MotelHubApi.Infrastructure;
+﻿using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Mvc.Versioning;
+using MotelHubApi;
+using MotelHubApi.Infrastructure;
+using MotelHubApi.Persistence;
+using MotelHubApi.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddApplicationLayer();
 builder.Services.AddInfrastructureLayer();
 builder.Services.AddPersistenceLayer(builder.Configuration);
 builder.Services.AddControllers();
+
+#region [Register configurations]
+// Register configs for using IOptionsMonitor<Config> in controllers and classes
+builder.Services.Configure<EmailConfig>(configuration.GetSection(nameof(EmailConfig)));
+builder.Services.Configure<JwtConfig>(configuration.GetSection(nameof(JwtConfig)));
+#endregion
+
+builder.Services.AddAuth(builder.Configuration);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

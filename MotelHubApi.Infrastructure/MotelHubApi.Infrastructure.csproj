@@ -9,13 +9,19 @@
   <ItemGroup>
     <None Remove="Extensions\" />
     <None Remove="Services\" />
+    <None Remove="Config\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Services\" />
+    <Folder Include="Config\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MotelHubApi.Application\MotelHubApi.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.15" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

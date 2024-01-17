@@ -198,4 +198,3 @@
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/obj/Debug/net7.0/MotelHubApi.WebApi.pdb
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/obj/Debug/net7.0/MotelHubApi.WebApi.genruntimeconfig.cache
 /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/obj/Debug/net7.0/ref/MotelHubApi.WebApi.dll
-/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/obj/Debug/net7.0/MotelHubApi.WebApi.sourcelink.json

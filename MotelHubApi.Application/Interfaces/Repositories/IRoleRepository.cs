@@ -1,5 +1,5 @@
 ﻿namespace MotelHubApi;
 
-public interface IRoleRepository
+public interface IRoleRepository : IBaseRepository<Role>
 {
 }
