@@ -4,5 +4,5 @@ namespace MotelHubApi;
 
 public class Role : IdentityRole<int>, IEntity
 {
-    public User? User { get; set; }
+    public ICollection<User> Users { get; set; } = new HashSet<User>();
 }

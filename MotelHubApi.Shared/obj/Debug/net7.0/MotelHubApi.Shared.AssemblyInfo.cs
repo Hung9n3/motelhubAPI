@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MotelHubApi.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2cbd68dd258255a653e16abcb04b252a5f6ef35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4b66ef56258725491e9641ae9dda979cde9d444")]
 [assembly: System.Reflection.AssemblyProductAttribute("MotelHubApi.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MotelHubApi.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,50 +1,127 @@
-﻿<Properties StartupConfiguration="{3705B4E0-46F2-4D0F-B71E-8987CDED1DA6}|Default" GitUserInfo="UsingGIT">
+﻿<Properties StartupConfiguration="{3705B4E0-46F2-4D0F-B71E-8987CDED1DA6}|https" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.WebApi/Extensions/ServiceExtensions.cs" relfile="MotelHubApi.WebApi/Extensions/ServiceExtensions.cs" line="111" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <DisabledProjects>
     <String>MotelHubApi.Presentation/MotelHubApi.WebApi.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MotelHubApi.Shared/Class1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MotelHubApi.WebApi/Extensions/ServiceExtensions.cs">
     <Files>
+      <File FileName="MotelHubApi.WebApi/appsettings.json" Line="21" Column="23" IsPinned="True" />
       <File FileName="MotelHubApi.Persistence/Repositories/Repository.cs" Line="5" Column="66" />
       <File FileName="MotelHubApi.Persistence/Repositories/EntityRepository.cs" Line="5" Column="76" />
       <File FileName="MotelHubApi.Persistence/Repositories/MeterReadingPriceRepository (copy).cs" Line="5" Column="58" />
       <File FileName="MotelHubApi.Persistence/Repositories/PhotoRepository.cs" Line="5" Column="52" />
       <File FileName="MotelHubApi.Persistence/Repositories/AreaRepository (copy).cs" Line="5" Column="55" />
-      <File FileName="MotelHubApi.Domain/Entities/User.cs" Line="5" Column="47" />
-      <File FileName="MotelHubApi.Domain/Entities/Room.cs" Line="3" Column="27" />
-      <File FileName="MotelHubApi.Domain/Commons/BaseEntity.cs" Line="5" Column="34" />
-      <File FileName="MotelHubApi.Persistence/Repositories/BaseRepository.cs" Line="6" Column="83" />
-      <File FileName="MotelHubApi.Application/Interfaces/Repositories/IBaseRepository.cs" Line="3" Column="54" />
+      <File FileName="MotelHubApi.Domain/Commons/BaseEntity.cs" Line="20" Column="18" />
+      <File FileName="MotelHubApi.Persistence/Repositories/BaseRepository.cs" Line="20" Column="23" />
+      <File FileName="MotelHubApi.Application/Interfaces/Repositories/IBaseRepository.cs" Line="3" Column="18" />
       <File FileName="MotelHubApi.Application/Interfaces/Repositories/IUserRepository.cs" Line="3" Column="56" />
-      <File FileName="MotelHubApi.Domain/Entities/Role.cs" Line="5" Column="47" />
-      <File FileName="MotelHubApi.Persistence/Repositories/RoleRepository.cs" Line="5" Column="50" />
-      <File FileName="MotelHubApi.Persistence/Extensions/ServiceExtensions.cs" Line="16" Column="129" />
+      <File FileName="MotelHubApi.Domain/Entities/Role.cs" Line="7" Column="35" />
+      <File FileName="MotelHubApi.Persistence/Repositories/RoleRepository.cs" Line="8" Column="3" />
+      <File FileName="MotelHubApi.Persistence/Extensions/ServiceExtensions.cs" Line="30" Column="1" />
       <File FileName="MotelHubApi.Persistence/Repositories/BillRepository.cs" Line="5" Column="50" />
-      <File FileName="MotelHubApi.Persistence/UnitOfWork/UnitOfWork.cs" Line="6" Column="28" />
-      <File FileName="MotelHubApi.Application/Interfaces/UnitOfWork/IUnitOfWork.cs" Line="6" Column="64" />
-      <File FileName="MotelHubApi.Presentation/Program.cs" Line="10" Column="59" />
-      <File FileName="MotelHubApi.Presentation/appsettings.json" Line="1" Column="1" />
-      <File FileName="MotelHubApi.Presentation/Controllers/RoomController.cs" Line="14" Column="33" />
-      <File FileName="MotelHubApi.Presentation/Controllers/Base/ApiControllerBase.cs" Line="11" Column="3" />
-      <File FileName="MotelHubApi.Shared/Class1.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.Application/Interfaces/UnitOfWork/IUnitOfWork.cs" Line="6" Column="18" />
+      <File FileName="MotelHubApi.Presentation/Program.cs" Line="23" Column="49" />
+      <File FileName="MotelHubApi.Presentation/Controllers/RoomController.cs" Line="22" Column="49" />
+      <File FileName="MotelHubApi.Application/Features/Room/Commands/CreateRoom/CreateRoomCommand.cs" Line="26" Column="41" />
+      <File FileName="MotelHubApi.Infrastructure/Extensions/ServiceExtensions.cs" Line="24" Column="17" />
+      <File FileName="MotelHubApi.Domain/Commons/DomainEventDispatcher.cs" Line="21" Column="40" />
+      <File FileName="MotelHubApi.Application/Commons/Mappings/MappingProfile.cs" Line="16" Column="46" />
+      <File FileName="MotelHubApi.Application/Extensions/ServiceExtension.cs" Line="34" Column="77" />
+      <File FileName="MotelHubApi.Application/Features/Room/Queries/GetByArea/GetRoomsByAreaQuery.cs" Line="41" Column="43" />
+      <File FileName="MotelHubApi.Application/Features/Room/BaseRoomValidator.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.Domain/Entities/Area.cs" Line="3" Column="14" />
+      <File FileName="MotelHubApi.Domain/Entities/Room.cs" Line="12" Column="84" />
+      <File FileName="MotelHubApi.Application/Features/Room/Queries/GetByArea/GetRoomsByAreaQueryValidator.cs" Line="4" Column="83" />
+      <File FileName="MotelHubApi.Application/Features/Room/Commands/BaseRoomCommand.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.Domain/Entities/Photo.cs" Line="14" Column="18" />
+      <File FileName="MotelHubApi.Domain/Entities/User.cs" Line="6" Column="2" />
+      <File FileName="MotelHubApi.Domain/Entities/ManyToMany/MemberRoom.cs" Line="9" Column="14" />
+      <File FileName="MotelHubApi.Persistence/Contexts/MotelHubSqlServerDbContext.cs" Line="53" Column="59" />
+      <File FileName="MotelHubApi.Domain/Entities/MeterReading.cs" Line="3" Column="14" />
+      <File FileName="MotelHubApi.Domain/Entities/Contract.cs" Line="26" Column="65" />
+      <File FileName="MotelHubApi.WebApi/Controllers/Base/ApiControllerBase.cs" Line="13" Column="23" />
+      <File FileName="MotelHubApi.Application/Interfaces/Services/IAuthenticationService.cs" Line="7" Column="14" />
+      <File FileName="MotelHubApi.Application/Interfaces/Services/IEmailService.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.Application/DTOs/UserLoginDto.cs" Line="4" Column="47" />
+      <File FileName="MotelHubApi.Application/DTOs/EmailRequestDto.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.Shared/Result.cs" Line="14" Column="22" />
+      <File FileName="MotelHubApi.Application/Features/Room/Commands/CreateRoom/RoomCreatedEvent.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.Infrastructure/Services/AuthenticationService.cs" Line="56" Column="59" />
+      <File FileName="MotelHubApi.Application/Interfaces/Services/ITokenService.cs" Line="8" Column="58" />
+      <File FileName="MotelHubApi.Infrastructure/Services/TokenService.cs" Line="5" Column="19" />
+      <File FileName="MotelHubApi.WebApi/Controllers/AuthenticationController.cs" Line="35" Column="56" />
+      <File FileName="MotelHubApi.WebApi/Extensions/ServiceExtensions.cs" Line="83" Column="1" />
+      <File FileName="MotelHubApi.Application/Features/Role/Commands/CreateRole.cs" Line="16" Column="48" />
+      <File FileName="MotelHubApi.WebApi/Controllers/RoleController.cs" Line="17" Column="27" />
+      <File FileName="MotelHubApi.Application/Interfaces/Repositories/IRoleRepository.cs" Line="3" Column="57" />
+      <File FileName="MotelHubApi.Application/Features/BaseHandler.cs" Line="14" Column="5" />
+      <File FileName="MotelHubApi.Application/Interfaces/Repositories/IRoomRepository.cs" Line="5" Column="33" />
+      <File FileName="MotelHubApi.Persistence/Repositories/RoomRepository.cs" Line="20" Column="32" />
+      <File FileName="MotelHubApi.Application/Features/Area/CreateAreaCommand.cs" Line="35" Column="23" />
+      <File FileName="MotelHubApi.Application/DTOs/UserRegisterDto.cs" Line="4" Column="126" />
+      <File FileName="MotelHubApi.Application/Features/Area/BaseAreaValidator.cs" Line="9" Column="14" />
+      <File FileName="MotelHubApi.Application/Features/Area/Commands/CreateAreaValidator.cs" Line="9" Column="134" />
+      <File FileName="MotelHubApi.Application/Features/Area/BaseAreaModel.cs" Line="1" Column="1" />
+      <File FileName="MotelHubApi.WebApi/Controllers/AreaController.cs" Line="8" Column="40" />
+      <File FileName="MotelHubApi.Infrastructure/Config/JwtConfig.cs" Line="7" Column="55" />
+      <File FileName="../../../.microsoft/usersecrets/28c40527-7539-4f79-bbbc-ec1caa5f145a/secrets.json" Line="21" Column="87" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MotelHubApi" expanded="True">
-            <Node name="MotelHubApi.Persistence" expanded="True">
-              <Node name="Contexts" expanded="True" />
+            <Node name="MotelHubApi.Application" expanded="True">
+              <Node name="Commons" expanded="True">
+                <Node name="Mappings" expanded="True" />
+              </Node>
+              <Node name="DTOs" expanded="True" />
               <Node name="Extensions" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name="UnitOfWork" expanded="True" />
+              <Node name="Features" expanded="True">
+                <Node name="Area" expanded="True">
+                  <Node name="Commands" expanded="True" />
+                </Node>
+                <Node name="Role" expanded="True">
+                  <Node name="Commands" expanded="True" />
+                </Node>
+                <Node name="Room" expanded="True">
+                  <Node name="Commands" expanded="True">
+                    <Node name="CreateRoom" expanded="True" />
+                  </Node>
+                  <Node name="Queries" expanded="True">
+                    <Node name="GetByArea" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Interfaces" expanded="True">
+                <Node name="Repositories" expanded="True" />
+                <Node name="Services" expanded="True" />
+                <Node name="UnitOfWork" expanded="True" />
+              </Node>
             </Node>
-            <Node name="MotelHubApi.Shared" selected="True" />
-            <Node name="MotelHubApi.WebApi" expanded="True">
+            <Node name="MotelHubApi.Domain" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Commons" expanded="True" />
+              <Node name="Entities" expanded="True">
+                <Node name="ManyToMany" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="MotelHubApi.Infrastructure" expanded="True">
+              <Node name="Config" expanded="True" />
+              <Node name="Extensions" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="MotelHubApi.Shared" expanded="True">
+              <Node name="Interfaces" expanded="True" />
+            </Node>
+            <Node name="MotelHubApi.WebApi">
               <Node name="Controllers" expanded="True">
                 <Node name="Base" expanded="True" />
               </Node>
+              <Node name="Extensions" expanded="True" />
             </Node>
           </Node>
         </State>

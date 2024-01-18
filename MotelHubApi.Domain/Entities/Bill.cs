@@ -28,5 +28,5 @@ public class Bill : BaseEntity
     public double? WaterTotal { get; set; }
     public double? Oweing { get; set; }
 
-    public Contract Contract { get; set; } = new();
+    public Contract? Contract { get; set; }
 }

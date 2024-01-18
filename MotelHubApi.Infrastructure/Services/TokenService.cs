@@ -22,7 +22,7 @@ public class TokenService : ITokenService
         var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.UtcNow.AddDays(int.Parse(this._jwtConfig.ExpireDay)),
+            expires: DateTime.UtcNow + this._jwtConfig.ExpireDay,
             signingCredentials: signIn);
 
         var result = new JwtSecurityTokenHandler().WriteToken(token);

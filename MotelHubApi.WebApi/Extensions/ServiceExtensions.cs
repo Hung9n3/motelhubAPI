@@ -7,6 +7,8 @@ using MotelHubApi.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace MotelHubApi.WebApi;
 
@@ -82,10 +84,23 @@ public static class ServiceExtensions
             };
             options.Events = new JwtBearerEvents
             {
+
                 OnAuthenticationFailed = context =>
                 {
                     // Custom logic when token authentication fails
                     // For example, you can log the error or handle it in a specific way
+                    string authorizationHeader = context.Request.Headers["Authorization"];
+
+                    if (!string.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+                    {
+                        // Remove "Bearer " prefix to extract the token
+                        string token = authorizationHeader.Substring(7);
+                        var jwtHandler = new JwtSecurityTokenHandler();
+                        var jwtToken = jwtHandler.ReadJwtToken(token);
+
+                        var a = jwtToken.Payload;
+                    }
+
                     return Task.CompletedTask;
                 },
                 OnTokenValidated = context =>

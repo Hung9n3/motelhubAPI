@@ -8,7 +8,7 @@ public class Area : BaseEntity
 	public double? Latitude { get; set; }
 	public int HostId { get; set; }
 
-	public User Host { get; set; } = new();
+	public User? Host { get; set; }
 	public ICollection<Photo> Photos { get; set; } = new HashSet<Photo>();
 	public ICollection<Room> Rooms { get; set; } = new HashSet<Room>();
 

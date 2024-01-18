@@ -12,7 +12,10 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddApplicationLayer();
 builder.Services.AddInfrastructureLayer();
 builder.Services.AddPersistenceLayer(builder.Configuration);
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+}); ;
 
 #region [Register configurations]
 // Register configs for using IOptionsMonitor<Config> in controllers and classes

@@ -49,15 +49,16 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
         base.OnModelCreating(builder);
 
         builder.Entity<User>(user =>
-        { 
+        {
+            user.HasIndex("RoleId").IsUnique(false);
             user.Property<int>("RoleId").HasDefaultValue(2);
 
             user.Property<string>("Email")
                 .IsRequired(false)
                 .HasMaxLength(256)
-                .HasColumnType("nvarchar(256)"); ;
+                .HasColumnType("nvarchar(256)");
 
-            user.HasOne(x => x.Role).WithMany("User").HasForeignKey(x => x.RoleId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
+            user.HasOne(x => x.Role).WithMany(x => x.Users).HasForeignKey(x => x.RoleId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
             user.HasMany(x => x.Photos).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);   
             user.HasMany(x => x.Areas).WithOne(x => x.Host).HasForeignKey(x => x.HostId).IsRequired().OnDelete(DeleteBehavior.NoAction);
             user.HasMany(x => x.OwnRooms).WithOne(x => x.Owner).HasForeignKey(x => x.OwnerId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
@@ -66,6 +67,12 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
             user.HasMany(x => x.LivingRooms).WithMany(x => x.Members).UsingEntity<UserRoom>(
                 j => j.HasOne(ur => ur.Room).WithMany(),
                 j => j.HasOne(ur => ur.Member).WithMany());
+        });
+
+        builder.Entity<Area>(area =>
+        {
+            area.HasMany(x => x.Rooms).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).OnDelete(DeleteBehavior.NoAction);
+            area.HasMany(x => x.Photos).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
         });
 
         builder.Entity<UserRoom>()
@@ -84,12 +91,6 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
             .HasForeignKey(ur => ur.RoomId)
             .OnDelete(DeleteBehavior.NoAction)
             ;
-
-        builder.Entity<Area>(area =>
-        {
-            area.HasMany(x => x.Rooms).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).OnDelete(DeleteBehavior.NoAction);
-            area.HasMany(x => x.Photos).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
-        });
 
         builder.Entity<Room>(room =>
         {

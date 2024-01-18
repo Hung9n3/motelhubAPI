@@ -27,6 +27,7 @@ public static class ServiceExtensions
             options.UseSqlServer(connectionString, sqlServerOptionsAction => {
                 sqlServerOptionsAction.EnableRetryOnFailure();
             });
+
             options.EnableSensitiveDataLogging();
         });
 

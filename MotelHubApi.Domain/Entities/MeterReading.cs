@@ -16,7 +16,7 @@ public class MeterReading : BaseEntity
 	public double? PriceId { get; set; }
 
 	public User? Owner { get; set; }
-	public Room Room { get; set; } = new();
+	public Room? Room { get; set; }
     public ICollection<Photo> Photos { get; set; } = new HashSet<Photo>();
 
     public MeterReading()
