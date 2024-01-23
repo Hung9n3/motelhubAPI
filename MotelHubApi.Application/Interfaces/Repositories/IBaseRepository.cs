@@ -1,10 +1,12 @@
-﻿namespace MotelHubApi;
+﻿using System.Linq.Expressions;
+
+namespace MotelHubApi;
 
 public interface IBaseRepository<T> where T : IEntity
 {
     IQueryable<T> Entities { get; }
 
-    Task<T?> GetByIdAsync(int id);
+    Task<T?> GetByIdAsync(int id, IEnumerable<Expression<Func<T, IEntity[]>>>? selector);
     Task<List<T>> GetAllAsync();
     Task<T> AddAsync(T entity);
     Task UpdateAsync(T entity);

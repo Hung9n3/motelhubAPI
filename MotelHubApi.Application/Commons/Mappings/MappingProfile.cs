@@ -14,6 +14,8 @@ public class MappingProfile : Profile
 
         #region Area
         CreateMap<CreateAreaCommand, Area>();
+
+        CreateMap<Area, GetAreaByOwnerDto>();
         #endregion
 
         #region Room

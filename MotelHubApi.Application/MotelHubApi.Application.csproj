@@ -44,20 +44,14 @@
     <Folder Include="Interfaces\Repositories\" />
     <Folder Include="Interfaces\Services\" />
     <Folder Include="Commons\Mappings\" />
-    <Folder Include="Features\" />
-    <Folder Include="Features\Room\" />
     <Folder Include="Interfaces\UnitOfWork\" />
-    <Folder Include="Features\Room\Commands\" />
     <Folder Include="Features\Room\Queries\" />
     <Folder Include="Features\Room\Commands\CreateRoom\" />
     <Folder Include="Features\Room\Queries\GetByArea\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Features\Role\" />
     <Folder Include="Features\Role\Commands\" />
     <Folder Include="Features\Role\Queries\" />
-    <Folder Include="Features\Area\" />
     <Folder Include="Features\Area\Commands\" />
-    <Folder Include="Features\Area\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />

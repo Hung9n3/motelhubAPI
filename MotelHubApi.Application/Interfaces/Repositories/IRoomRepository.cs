@@ -5,5 +5,6 @@ namespace MotelHubApi;
 public interface IRoomRepository : IBaseRepository<Room>
 {
     Task<IEnumerable<Room>> GetByArea(int? areaId);
-    DbContext GetDbContext();
+    Task<IEnumerable<Room>> GetByOwner(int? ownerId);
+    Task<IEnumerable<Room>> GetLivingRoom(int memberId);
 }

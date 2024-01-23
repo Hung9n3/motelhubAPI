@@ -2,7 +2,7 @@
 
 namespace MotelHubApi;
 
-public class BaseRoomValidator<TCommand> : AbstractValidator<TCommand> where TCommand : BaseRoomCommand
+public class BaseRoomValidator<TCommand> : AbstractValidator<TCommand> where TCommand : BaseRoomModel
 {
 	public BaseRoomValidator()
 	{

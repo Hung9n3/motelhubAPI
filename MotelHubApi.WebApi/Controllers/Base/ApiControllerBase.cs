@@ -18,5 +18,12 @@ public abstract class ApiControllerBase : ControllerBase
     {
         _mediator = mediator;
     }
+
+    protected int GetUserId()
+    {
+        var userId = User.Claims.First(c => c.Type == "UserId").Value;
+        int.TryParse(userId, out var result);
+        return result;
+    }
 }
 

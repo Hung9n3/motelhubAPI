@@ -114,6 +114,7 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
         builder.Entity<Contract>(contract =>
         {
             contract.HasMany(x => x.Bills).WithOne(x => x.Contract).OnDelete(DeleteBehavior.NoAction);
+            contract.HasMany(x => x.Photos).WithOne(x => x.Contract).OnDelete(DeleteBehavior.NoAction);
         });
     }
 }

@@ -5,7 +5,7 @@ using MotelHubApi.Shared;
 
 namespace MotelHubApi;
 
-public class CreateRoomCommand : BaseRoomCommand, IRequest<int>
+public class CreateRoomCommand : BaseRoomModel, IRequest<int>
 {
 	public string Name { get; set; } = string.Empty;
 	public double Acreage { get; set; }

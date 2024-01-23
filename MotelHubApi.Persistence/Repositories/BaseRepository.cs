@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
 namespace MotelHubApi.Persistence;
@@ -40,9 +41,17 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
             .ToListAsync();
     }
 
-    public virtual async Task<T?> GetByIdAsync(int id)
+    public virtual async Task<T?> GetByIdAsync(int id, IEnumerable<Expression<Func<T, IEntity[]>>>? selectors = null) 
     {
-        return await _dbContext.Set<T>().FindAsync(id);
+        IQueryable<T> query = this.Entities;
+        if (selectors is not null)
+        {
+            foreach (var selector in selectors)
+            {
+                query = query.Include(selector);
+            } 
+        }
+        return await query.FirstOrDefaultAsync(x => x.Id == id);
     }
 }
 

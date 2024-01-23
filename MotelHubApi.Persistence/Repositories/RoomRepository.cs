@@ -15,9 +15,14 @@ public class RoomRepository : BaseRepository<Room>, IRoomRepository
         return rooms;
     }
 
-    public DbContext GetDbContext()
+    public async Task<IEnumerable<Room>> GetByOwner(int? ownerId)
     {
-        return base._dbContext;
+        return await base.Entities.Where(x => x.OwnerId == ownerId).ToListAsync();
+    }
+
+    public async Task<IEnumerable<Room>> GetLivingRoom(int memberId)
+    {
+        return await base.Entities.Where(x => x.Members.Any(x => x.Id == memberId)).ToListAsync();
     }
 }
 

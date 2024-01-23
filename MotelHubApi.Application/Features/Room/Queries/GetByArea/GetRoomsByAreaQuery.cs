@@ -8,7 +8,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace MotelHubApi;
 
-public class GetRoomsByAreaQuery : BaseRoomCommand, IRequest<IEnumerable<GetRoomsByAreaDto>>
+public class GetRoomsByAreaQuery : BaseRoomModel, IRequest<IEnumerable<GetRoomsByAreaDto>>
 {
 	public GetRoomsByAreaQuery(int? areaId)
 	{

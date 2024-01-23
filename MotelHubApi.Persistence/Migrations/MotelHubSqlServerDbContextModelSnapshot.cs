@@ -430,7 +430,7 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<int>("AreaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ContractId")
+                    b.Property<int>("ContractId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -770,9 +770,11 @@ namespace MotelHubApi.Persistence.Migrations
                         .HasForeignKey("AreaId")
                         .OnDelete(DeleteBehavior.NoAction);
 
-                    b.HasOne("MotelHubApi.Contract", null)
+                    b.HasOne("MotelHubApi.Contract", "Contract")
                         .WithMany("Photos")
-                        .HasForeignKey("ContractId");
+                        .HasForeignKey("ContractId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("MotelHubApi.MeterReading", "MeterReading")
                         .WithMany("Photos")
@@ -790,6 +792,8 @@ namespace MotelHubApi.Persistence.Migrations
                         .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Area");
+
+                    b.Navigation("Contract");
 
                     b.Navigation("MeterReading");
 

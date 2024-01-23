@@ -31,6 +31,7 @@ public static class ServiceExtensions
             options.AddPolicy("Basic", policy => policy.RequireRole("Basic"));
             options.AddPolicy("Basic", policy => policy.RequireRole("Basic"));
             options.AddPolicy("IsUser", policy => policy.RequireRole("Vip", "Basic"));
+            options.AddPolicy("HasRole", policy => policy.RequireRole("Vip", "Basic", "Admin"));
         });
     }
 

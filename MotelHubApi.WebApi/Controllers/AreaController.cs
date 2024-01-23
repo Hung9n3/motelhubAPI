@@ -15,13 +15,32 @@ public class AreaController : ApiControllerBase
     [Authorize(Policy = "IsUser")]
     public async Task<IActionResult> Create([FromBody] CreateAreaCommand command)
     {
-        var hostId = User.Claims.First(c => c.Type == "UserId").Value;
-        if(hostId == null || hostId == string.Empty)
+        var hostId = base.GetUserId();
+        if(hostId <= 0)
         {
             return Unauthorized();
         }
-        command.HostId = int.Parse(hostId);
+        command.HostId = hostId;
         var result = await base._mediator.Send(command);
+        return Ok(result);
+    }
+
+    [HttpGet]
+    [Authorize(Policy = "IsUser")]
+    public async Task<IActionResult> GetByOwner()
+    {
+        var hostId = base.GetUserId();
+        if (hostId <= 0)
+        {
+            return Unauthorized();
+        }
+
+        var request = new GetAreaByOwnerQuery
+        {
+            HostId = hostId
+        };
+
+        var result = await this._mediator.Send(request);
         return Ok(result);
     }
 }
