@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MotelHubApi.Infrastructure
-build_property.ProjectDir = /Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Infrastructure/
+build_property.ProjectDir = C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

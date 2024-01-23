@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ppzcsLfBDNin4oVESg0e0orWzfxL/wNqRZ1tv19X77ncpNhtzVs7bFYhRcyH6A9Xqkrbr1ea2z2a9hlWDrBdRg==",
+  "dgSpecHash": "AIIdTibvDUUVv7Fr9GBXPkMjV4FsSYNt9YwFoKzYxnleluL2R9hhfwZETyRRrRtoBlJvcIiNdeYIWoSDI05WWw==",
   "success": true,
-  "projectFilePath": "/Users/wave5dev/Documents/GitHub/motelhubAPI/MotelHubApi.Shared/MotelHubApi.Shared.csproj",
-  "expectedPackageFiles": [
-    "/Users/wave5dev/.nuget/packages/microsoft.netcore.app.ref/7.0.15/microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "/Users/wave5dev/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.15/microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\HungDoDuy\\source\\repos\\motelhubAPI\\MotelHubApi.Shared\\MotelHubApi.Shared.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
