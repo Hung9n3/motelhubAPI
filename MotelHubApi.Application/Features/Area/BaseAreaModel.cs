@@ -1,7 +1,7 @@
 ﻿using System;
 namespace MotelHubApi;
 
-public class BaseAreaModel
+public class BaseAreaModel : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;

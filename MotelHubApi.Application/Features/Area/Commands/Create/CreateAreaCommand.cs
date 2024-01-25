@@ -7,7 +7,6 @@ namespace MotelHubApi;
 
 public class CreateAreaCommand : BaseAreaModel, IRequest<Area>
 {
-	public string Name { get; set; } = string.Empty;
 }
 
 internal class CreateAreaCommandHandler : BaseHandler<Area, CreateAreaCommand, IAreaRepository, Area>
@@ -29,8 +28,8 @@ internal class CreateAreaCommandHandler : BaseHandler<Area, CreateAreaCommand, I
         }
 
         var area = base._mapper.Map<Area>(command);
-
         var result = await _repository.AddAsync(area);
+        area.AddDomainEvent(new AreaCreatedEvent(area));
         await _unitOfWork.Save(cancellationToken);
         return result;
     }

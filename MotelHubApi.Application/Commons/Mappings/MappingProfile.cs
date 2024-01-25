@@ -14,8 +14,11 @@ public class MappingProfile : Profile
 
         #region Area
         CreateMap<CreateAreaCommand, Area>();
+        CreateMap<UpdateAreaCommand, Area>();
+        CreateMap<DeleteAreaCommand, Area>();
 
-        CreateMap<Area, GetAreaByOwnerDto>();
+        CreateMap<Area, GetAreaByOwnerDto>()
+            .ForMember(des => des.RoomCount, opt => opt.MapFrom(src => src.Rooms == null ? 0 : src.Rooms.Count));
         #endregion
 
         #region Room

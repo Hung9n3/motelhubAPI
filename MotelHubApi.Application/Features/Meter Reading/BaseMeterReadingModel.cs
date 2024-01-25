@@ -19,7 +19,7 @@ public class BaseMeterReadingModel
     public string? OwnerPhone { get; set; }
     public string? OwnerName { get; set; }
     public int RoomId { get; set; }
-    public double? PriceId { get; set; }
+    public decimal? Price{ get; set; }
 
     public BaseUserModel? Owner { get; set; }
     public BaseRoomModel? Room { get; set; }
