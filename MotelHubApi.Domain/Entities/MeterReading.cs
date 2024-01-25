@@ -13,7 +13,7 @@ public class MeterReading : BaseEntity
 	public string? OwnerPhone { get; set; }
 	public string? OwnerName { get; set; }
 	public int RoomId { get; set; }
-	public double? PriceId { get; set; }
+	public double? Price { get; set; }
 
 	public User? Owner { get; set; }
 	public Room? Room { get; set; }

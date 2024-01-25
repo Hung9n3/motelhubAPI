@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MotelHubApi.Persistence;
 
@@ -11,9 +12,11 @@ using MotelHubApi.Persistence;
 namespace MotelHubApi.Persistence.Migrations
 {
     [DbContext(typeof(MotelHubSqlServerDbContext))]
-    partial class MotelHubSqlServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240125094808_update-meter-reading")]
+    partial class updatemeterreading
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -358,7 +361,7 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<string>("OwnerPhone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("Price")
+                    b.Property<double?>("PriceId")
                         .HasColumnType("float");
 
                     b.Property<int>("RoomId")
