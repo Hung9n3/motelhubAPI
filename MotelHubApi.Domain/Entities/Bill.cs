@@ -5,7 +5,7 @@
 public class Bill : BaseEntity
 {
     public string? Title { get; set; }
-    public int ContractId { get; set; }
+    public int? ContractId { get; set; }
     public string? HostName { get; set; }
     public string? HostPhone { get; set; }
     public string? CustomerName { get; set; }

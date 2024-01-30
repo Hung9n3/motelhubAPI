@@ -13,6 +13,10 @@ namespace MotelHubApi;
 public class GetRoomByIdQuery : IRequest<GetRoomByIdDto>
 {
     public int Id { get; set; }
+    public GetRoomByIdQuery(int id)
+    {
+        this.Id = id;
+    }
 }
 
 internal class GetRoomByIdQueryHandler : BaseHandler<Room, GetRoomByIdQuery, IRoomRepository, GetRoomByIdDto>
@@ -23,9 +27,10 @@ internal class GetRoomByIdQueryHandler : BaseHandler<Room, GetRoomByIdQuery, IRo
 
     public override async Task<GetRoomByIdDto> Handle(GetRoomByIdQuery request, CancellationToken cancellationToken)
     {
-        var dbResult = base._repository.GetByIdAsync(
+        var dbResult = await base._repository.GetByIdAsync(
             request.Id, 
             new List<Expression<Func<Room, object>>> { x => x.Area, x => x.Members, x => x.MeterReadings, x => x.Photos, x => x.Contracts });
-        return new GetRoomByIdDto();
+        var result = _mapper.Map<GetRoomByIdDto>(dbResult);
+        return result;
     }
 }

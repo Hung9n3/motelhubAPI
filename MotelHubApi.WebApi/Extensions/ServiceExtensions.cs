@@ -27,11 +27,10 @@ public static class ServiceExtensions
     {
         services.AddAuthorization(options =>
         {
-            options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
-            options.AddPolicy("Basic", policy => policy.RequireRole("Basic"));
-            options.AddPolicy("Basic", policy => policy.RequireRole("Basic"));
-            options.AddPolicy("IsUser", policy => policy.RequireRole("Vip", "Basic"));
-            options.AddPolicy("HasRole", policy => policy.RequireRole("Vip", "Basic", "Admin"));
+            options.AddPolicy("Admin", policy => policy.RequireRole("ADMIN"));
+            options.AddPolicy("Basic", policy => policy.RequireRole("BASIC"));
+            options.AddPolicy("IsUser", policy => policy.RequireRole("VIP", "BASIC"));
+            options.AddPolicy("HasRole", policy => policy.RequireRole("VIP", "BASIC", "ADMIN"));
         });
     }
 
@@ -120,7 +119,7 @@ public static class ServiceExtensions
                         return Task.CompletedTask;
                     }
                     var claimsIdentity = (ClaimsIdentity)context.Principal.Identity;
-                    var claim = new Claim(ClaimTypes.Role, role.Name);
+                    var claim = new Claim(ClaimTypes.Role, role.NormalizedName);
                     claimsIdentity?.AddClaim(claim);
                     // Perform additional processing or checks based on the claims
                     // For example, you can add custom authorization logic or enrich the current user's identity

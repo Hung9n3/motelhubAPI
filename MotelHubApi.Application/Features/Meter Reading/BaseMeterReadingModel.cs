@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MotelHubApi;
 
-public class BaseMeterReadingModel 
+public class BaseMeterReadingModel : BaseEntityModel
 {
     public string? Title { get; set; }
     public DateTime? From { get; set; }
@@ -20,8 +20,4 @@ public class BaseMeterReadingModel
     public string? OwnerName { get; set; }
     public int RoomId { get; set; }
     public decimal? Price{ get; set; }
-
-    public BaseUserModel? Owner { get; set; }
-    public BaseRoomModel? Room { get; set; }
-    public ICollection<BasePhotoModel> Photos { get; set; } = new HashSet<BasePhotoModel>();
 }

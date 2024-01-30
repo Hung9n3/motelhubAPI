@@ -26,9 +26,6 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\ne
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.AssemblyInfo.cs
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.sourcelink.json
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.dll
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\refint\MotelHubApi.Persistence.dll
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\bin\Debug\net7.0\MotelHubApi.Persistence.deps.json
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\bin\Debug\net7.0\MotelHubApi.Persistence.runtimeconfig.json
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\bin\Debug\net7.0\MotelHubApi.Persistence.dll
@@ -40,5 +37,8 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\bin\Debug\ne
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\bin\Debug\net7.0\MotelHubApi.Domain.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\bin\Debug\net7.0\MotelHubApi.Shared.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.csproj.CopyComplete
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\refint\MotelHubApi.Persistence.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\MotelHubApi.Persistence.genruntimeconfig.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Persistence\obj\Debug\net7.0\ref\MotelHubApi.Persistence.dll

@@ -1,31 +1,23 @@
 {
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:51792",
-      "sslPort": 44356
-    }
-  },
   "profiles": {
     "http": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5076",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
+      "applicationUrl": "http://localhost:5076",
       "dotnetRunMessages": true
     },
     "https": {
       "commandName": "Project",
+      "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7128;http://localhost:5076",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
+      "applicationUrl": "https://localhost:7128;http://localhost:5076",
       "dotnetRunMessages": true
     },
     "IIS Express": {
@@ -39,10 +31,19 @@
     "MotelHubApi.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:25116;http://localhost:21764",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:25116;http://localhost:21764"
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:51792",
+      "sslPort": 44356
     }
   }
 }

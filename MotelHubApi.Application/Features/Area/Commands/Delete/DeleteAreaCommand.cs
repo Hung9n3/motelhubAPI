@@ -14,8 +14,11 @@ public class DeleteAreaCommand : BaseAreaModel, IRequest
 
 public class DeleteAreaCommandHandler : BaseHandler<Area, DeleteAreaCommand, IAreaRepository>
 {
-    public DeleteAreaCommandHandler(IUnitOfWork unitOfWork, IAreaRepository repository, IMapper mapper) : base(unitOfWork, repository, mapper)
+    private readonly RepositoryContext _repositoryContext;
+    public DeleteAreaCommandHandler(IUnitOfWork unitOfWork, IAreaRepository repository, IMapper mapper, RepositoryContext repositoryContext)
+        : base(unitOfWork, repository, mapper)
     {
+        this._repositoryContext = repositoryContext;
     }
 
     public override async Task Handle(DeleteAreaCommand request, CancellationToken cancellationToken)

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MotelHubApi;
 
-internal class GetAreaByIdDto
+public class GetAreaByIdDto : BaseAreaModel
 {
+    public BaseUserModel? Host { get; set; }
+    public ICollection<BasePhotoModel> Photos { get; set; } = new HashSet<BasePhotoModel>();
+    public ICollection<BaseRoomModel> Rooms { get; set; } = new HashSet<BaseRoomModel>();
 }

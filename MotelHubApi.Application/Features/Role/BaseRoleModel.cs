@@ -9,5 +9,4 @@ namespace MotelHubApi;
 
 public class BaseRoleModel : IdentityRole<int>
 {
-    public ICollection<BaseUserModel> Users { get; set; } = new HashSet<BaseUserModel>();
 }

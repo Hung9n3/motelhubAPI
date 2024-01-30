@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MotelHubApi;
 
-public class BaseContractModel
+public class BaseContractModel : BaseEntityModel
 {
     public string? Title { get; set; }
     public int? CustomerId { get; set; }
@@ -22,9 +22,9 @@ public class BaseContractModel
     public DateTime? EndDate { get; set; }
     public DateTime? CancelDate { get; set; }
 
-    public BaseUserModel? Customer { get; set; }
-    public BaseUserModel? Host { get; set; }
-    public BaseRoomModel? Room { get; set; }
-    public ICollection<BasePhotoModel> Photos { get; set; } = new HashSet<BasePhotoModel>();
-    public ICollection<BaseBillModel> Bills { get; set; } = new List<BaseBillModel>();
+    //public BaseUserModel? Customer { get; set; }
+    //public BaseUserModel? Host { get; set; }
+    //public BaseRoomModel? Room { get; set; }
+    //public ICollection<BasePhotoModel> Photos { get; set; } = new HashSet<BasePhotoModel>();
+    //public ICollection<BaseBillModel> Bills { get; set; } = new List<BaseBillModel>();
 }

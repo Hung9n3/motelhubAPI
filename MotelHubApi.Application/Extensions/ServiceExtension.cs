@@ -9,9 +9,15 @@ public static class ServiceExtension
 {
     public static void AddApplicationLayer(this IServiceCollection services)
     {
+        services.AddRepositoryContext();
         services.AddAutoMapper();
         services.AddMediator();
         services.AddValidators();
+    }
+
+    private static void AddRepositoryContext(this IServiceCollection services)
+    {
+        services.AddTransient<RepositoryContext> ();
     }
 
     private static void AddAutoMapper(this IServiceCollection services)

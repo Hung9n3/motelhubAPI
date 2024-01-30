@@ -11,6 +11,17 @@ public class RoomController : ApiControllerBase
 	{
 	}
 
+	[HttpGet("{roomId}")]
+	public async Task<IActionResult> GetById(int roomId)
+	{
+		var result = await _mediator.Send(new GetRoomByIdQuery(roomId));
+		if(result == null)
+		{
+			return NotFound();
+		}
+		return Ok(result);
+	}
+
 	[HttpGet("area/{areaId}")]
 	public async Task<IActionResult> GetByArea(int? areaId)
 	{
@@ -23,6 +34,13 @@ public class RoomController : ApiControllerBase
 	{
 		var result = await _mediator.Send(command);
 		return CreatedAtAction(nameof(Create), new { id = result });
+	}
+
+	[HttpPut]
+	public async Task<IActionResult> Update(UpdateRoomCommand command)
+	{
+		await _mediator.Send(command);
+		return Ok();
 	}
 }
 

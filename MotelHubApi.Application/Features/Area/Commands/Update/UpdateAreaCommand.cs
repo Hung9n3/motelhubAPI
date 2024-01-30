@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -27,7 +29,8 @@ public class UpdateAreaCommandHandler : BaseHandler<Area, UpdateAreaCommand, IAr
         var validationResult = this._validator.Validate(request);
         if (!validationResult.IsValid)
         {
-            throw new Exception($"{validationResult.Errors}");
+            string message = string.Join(", ", validationResult.Errors.Select(a => a.ErrorMessage));
+            throw new Exception($"{message}");
         }
         var area = this._mapper.Map<Area>(request);
         await this._repository.UpdateAsync(area);

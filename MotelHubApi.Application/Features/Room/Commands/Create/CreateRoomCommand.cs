@@ -7,10 +7,7 @@ namespace MotelHubApi;
 
 public class CreateRoomCommand : BaseRoomModel, IRequest<int>
 {
-	public string Name { get; set; } = string.Empty;
-	public double Acreage { get; set; }
-    public int OwnerId { get; set; }
-    public List<Photo> Photos { get; set; } = new List<Photo>();
+    public List<BasePhotoModel> Photos { get; set; } = new List<BasePhotoModel>();
 }
 
 internal class CreateRoomCommandHandler : BaseHandler<Room, CreateRoomCommand, IRoomRepository,int>

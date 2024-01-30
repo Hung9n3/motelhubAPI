@@ -6,7 +6,7 @@ public class Area : BaseEntity
 	public string Address { get; set; } = string.Empty;
 	public double? Longtitude { get; set; }
 	public double? Latitude { get; set; }
-	public int HostId { get; set; }
+	public int? HostId { get; set; }
 
 	public User? Host { get; set; }
 	public ICollection<Photo> Photos { get; set; } = new HashSet<Photo>();

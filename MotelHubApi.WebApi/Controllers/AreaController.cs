@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MotelHubApi.WebApi;
 
+[Authorize(Policy = "IsUser")]
 public class AreaController : ApiControllerBase
 {
     public AreaController(IMediator mediator) : base(mediator)
@@ -12,7 +13,6 @@ public class AreaController : ApiControllerBase
     }
 
     [HttpPost]
-    [Authorize(Policy = "IsUser")]
     public async Task<IActionResult> Create([FromBody] CreateAreaCommand command)
     {
         var hostId = base.GetUserId();
@@ -26,7 +26,6 @@ public class AreaController : ApiControllerBase
     }
 
     [HttpGet]
-    [Authorize(Policy = "IsUser")]
     public async Task<IActionResult> GetByOwner()
     {
         var hostId = base.GetUserId();
@@ -42,6 +41,31 @@ public class AreaController : ApiControllerBase
 
         var result = await this._mediator.Send(request);
         return Ok(result);
+    }
+
+    [HttpGet("{areaId}")]
+    public async Task<IActionResult> GetById(int areaId)
+    {
+        var result = await base._mediator.Send(new GetAreaByIdQuery(areaId));
+        if(result == null)
+        {
+            return NotFound();
+        }
+        return Ok(result);
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> Update(UpdateAreaCommand command)
+    {
+        await base._mediator.Send(command);
+        return Ok();
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> Delete(DeleteAreaCommand command)
+    {
+        await base._mediator.Send(command);
+        return Ok();
     }
 }
 

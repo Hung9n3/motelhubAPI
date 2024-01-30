@@ -12,6 +12,11 @@ namespace MotelHubApi;
 
 public class UpdateRoomCommand : BaseRoomModel, IRequest
 {
+    public ICollection<UserRoom> UserRooms { get; set; } = new HashSet<UserRoom>();
+    public ICollection<BaseUserModel> Members { get; set; } = new HashSet<BaseUserModel>();
+    public ICollection<BasePhotoModel> Photos { get; set; } = new HashSet<BasePhotoModel>();
+    public ICollection<BaseMeterReadingModel> MeterReadings { get; set; } = new HashSet<BaseMeterReadingModel>();
+    public ICollection<BaseContractModel> Contracts { get; set; } = new HashSet<BaseContractModel>();
 }
 
 public class UpdateRoomCommandHandler : BaseHandler<Room, UpdateRoomCommand, IRoomRepository>

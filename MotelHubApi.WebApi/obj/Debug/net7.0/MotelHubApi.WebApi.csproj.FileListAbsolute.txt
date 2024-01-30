@@ -203,12 +203,8 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.AssemblyInfoInputs.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.AssemblyInfo.cs
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.sourcelink.json
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.dll
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\refint\MotelHubApi.WebApi.dll
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\appsettings.json
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\MotelHubApi.WebApi.exe
@@ -297,5 +293,8 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\scopedcss\bundle\MotelHubApi.WebApi.styles.css
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.csproj.CopyComplete
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\refint\MotelHubApi.WebApi.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.genruntimeconfig.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\ref\MotelHubApi.WebApi.dll

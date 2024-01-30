@@ -9,6 +9,9 @@ public class MappingProfile : Profile
         #region User
         CreateMap<RegisterDto, User>();
 
+        CreateMap<BaseUserModel, User>();
+
+        CreateMap<User, BaseUserModel>();
         #endregion
 
         #region Area
@@ -17,6 +20,7 @@ public class MappingProfile : Profile
         CreateMap<DeleteAreaCommand, Area>();
 
         CreateMap<Area, BaseAreaModel>();
+        CreateMap<Area, GetAreaByIdDto>();
         CreateMap<Area, GetAreaByOwnerDto>()
             .ForMember(des => des.RoomCount, opt => opt.MapFrom(src => src.Rooms == null ? 0 : src.Rooms.Count));
         #endregion
@@ -27,30 +31,34 @@ public class MappingProfile : Profile
         CreateMap<DeleteRoomCommand, Room>();
 
         CreateMap<Room, BaseRoomModel>();
-        CreateMap<Room, GetRoomsByAreaDto>()
-            .ForMember(des => des.OwnerName, options => options.MapFrom(src => src.Owner == null ? string.Empty : src.Owner.Fullname));
+        CreateMap<Room, GetRoomsByAreaDto>();
+        CreateMap<Room, GetRoomByIdDto>();
 
         #endregion
 
         #region MeterReading
+        CreateMap<BaseMeterReadingModel, MeterReading>();
         CreateMap<CreateMeterReadingCommand, MeterReading>();
 
         CreateMap<MeterReading, BaseMeterReadingModel>();
         #endregion
 
         #region Photo
+        CreateMap<BasePhotoModel, Photo>();
         CreateMap<CreatePhotoCommand, Photo>();
 
         CreateMap<Photo, BasePhotoModel>();
         #endregion
 
         #region Bill
+        CreateMap<BaseBillModel, Bill>();
         CreateMap<CreateBillCommand, Bill>();
 
         CreateMap<Bill, BaseBillModel>();
         #endregion
 
         #region Contract
+        CreateMap<BaseContractModel, Contract>();
         CreateMap<CreateContractCommand, Contract>();
 
         CreateMap<Contract, BaseContractModel>();

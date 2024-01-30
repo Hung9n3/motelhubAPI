@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MotelHubApi;
 
-public class BaseBillModel
+public class BaseBillModel : BaseEntityModel
 {
     public string? Title { get; set; }
     public int ContractId { get; set; }

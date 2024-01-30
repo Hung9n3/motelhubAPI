@@ -48,21 +48,23 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
     {
         base.OnModelCreating(builder);
 
+        builder.Entity<Role>(role =>
+        {
+            role.HasMany(x => x.Users).WithOne(x => x.Role).HasForeignKey(x => x.RoleId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+        });
         builder.Entity<User>(user =>
         {
-            user.HasIndex("RoleId").IsUnique(false);
-            user.Property<int>("RoleId").HasDefaultValue(2);
+            user.Property<int?>("RoleId").HasDefaultValue(2);
 
             user.Property<string>("Email")
                 .IsRequired(false)
                 .HasMaxLength(256)
                 .HasColumnType("nvarchar(256)");
 
-            user.HasOne(x => x.Role).WithMany(x => x.Users).HasForeignKey(x => x.RoleId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
-            user.HasMany(x => x.Photos).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);   
-            user.HasMany(x => x.Areas).WithOne(x => x.Host).HasForeignKey(x => x.HostId).IsRequired().OnDelete(DeleteBehavior.NoAction);
-            user.HasMany(x => x.OwnRooms).WithOne(x => x.Owner).HasForeignKey(x => x.OwnerId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
-            user.HasMany(x => x.CustomerContracts).WithOne(x => x.Customer).HasForeignKey(x => x.CustomerId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
+            user.HasMany(x => x.Photos).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);   
+            user.HasMany(x => x.Areas).WithOne(x => x.Host).HasForeignKey(x => x.HostId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            user.HasMany(x => x.OwnRooms).WithOne(x => x.Owner).HasForeignKey(x => x.OwnerId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            user.HasMany(x => x.CustomerContracts).WithOne(x => x.Customer).HasForeignKey(x => x.CustomerId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
             user.HasMany(x => x.HostContracts).WithOne(x => x.Host).HasForeignKey(x => x.HostId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
             user.HasMany(x => x.LivingRooms).WithMany(x => x.Members).UsingEntity<UserRoom>(
                 j => j.HasOne(ur => ur.Room).WithMany(),
@@ -71,8 +73,8 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
 
         builder.Entity<Area>(area =>
         {
-            area.HasMany(x => x.Rooms).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).OnDelete(DeleteBehavior.NoAction);
-            area.HasMany(x => x.Photos).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
+            area.HasMany(x => x.Rooms).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            area.HasMany(x => x.Photos).WithOne(x => x.Area).HasForeignKey(x => x.AreaId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
         });
 
         builder.Entity<UserRoom>()
@@ -82,21 +84,21 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
             .HasOne(ur => ur.Member)
             .WithMany(u => u.UserRooms)
             .HasForeignKey(ur => ur.MemberId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Cascade)
             ;
 
         builder.Entity<UserRoom>()
             .HasOne(ur => ur.Room)
             .WithMany(r => r.UserRooms)
             .HasForeignKey(ur => ur.RoomId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Cascade)
             ;
 
         builder.Entity<Room>(room =>
         {
-            room.HasMany(x => x.Photos).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
-            room.HasMany(x => x.MeterReadings).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
-            room.HasMany(x => x.Contracts).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
+            room.HasMany(x => x.Photos).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            room.HasMany(x => x.MeterReadings).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            room.HasMany(x => x.Contracts).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
 
         });
 
@@ -107,14 +109,14 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
 
         builder.Entity<MeterReading>(meterReading =>
         {
-            meterReading.HasMany(x => x.Photos).WithOne(x => x.MeterReading).HasForeignKey(x => x.MeterReadingId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);
+            meterReading.HasMany(x => x.Photos).WithOne(x => x.MeterReading).HasForeignKey(x => x.MeterReadingId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
 
         });
 
         builder.Entity<Contract>(contract =>
         {
-            contract.HasMany(x => x.Bills).WithOne(x => x.Contract).OnDelete(DeleteBehavior.NoAction);
-            contract.HasMany(x => x.Photos).WithOne(x => x.Contract).OnDelete(DeleteBehavior.NoAction);
+            contract.HasMany(x => x.Bills).WithOne(x => x.Contract).HasForeignKey(x => x.ContractId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            contract.HasMany(x => x.Photos).WithOne(x => x.Contract).HasForeignKey(x => x.ContractId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
         });
     }
 }

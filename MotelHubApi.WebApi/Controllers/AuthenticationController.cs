@@ -23,7 +23,7 @@ public class AuthenticationController : ControllerBase
 	{
         if (dto.Password.IsNullOrEmpty() || dto.Username.IsNullOrEmpty())
         {
-            throw new ArgumentNullException();
+           return BadRequest($"{nameof(dto.Password)} and {nameof(dto.Username)} can not empty");
         }
 		var result = await _authenticationService.Register(dto);
 		return Ok(result);

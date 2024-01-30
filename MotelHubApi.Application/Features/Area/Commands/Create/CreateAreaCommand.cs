@@ -7,6 +7,7 @@ namespace MotelHubApi;
 
 public class CreateAreaCommand : BaseAreaModel, IRequest<Area>
 {
+    public List<BasePhotoModel> Photos { get; set; } = new List<BasePhotoModel>();
 }
 
 internal class CreateAreaCommandHandler : BaseHandler<Area, CreateAreaCommand, IAreaRepository, Area>

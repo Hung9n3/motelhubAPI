@@ -16,5 +16,11 @@ public class RoleController : ApiControllerBase
         var result = await base._mediator.Send(command);
         return Ok(result);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        return Ok();
+    }
 }
 

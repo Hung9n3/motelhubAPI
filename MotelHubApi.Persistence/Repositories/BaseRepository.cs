@@ -21,16 +21,15 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
         return entity;
     }
 
-    public virtual Task UpdateAsync(T entity)
+    public virtual async Task UpdateAsync(T entity)
     {
-        var exist = _dbContext.Set<T>().Find(entity.Id) ?? throw new Exception("Not Found");
-        _dbContext.Entry(exist).CurrentValues.SetValues(entity);
-        return Task.CompletedTask;
+        var exist = await _dbContext.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == entity.Id) ?? throw new Exception("Not Found");
+        _dbContext.Update(entity);
     }
 
     public virtual Task DeleteAsync(T entity)
     {
-        _dbContext.Set<T>().Remove(entity);
+        var a = _dbContext.Set<T>().Remove(entity);
         return Task.CompletedTask;
     }
 
@@ -41,7 +40,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
             .ToListAsync();
     }
 
-    public virtual async Task<T?> GetByIdAsync(int id, IEnumerable<Expression<Func<T, IEntity[]>>>? selectors = null) 
+    public virtual async Task<T?> GetByIdAsync(int id, IEnumerable<Expression<Func<T, object>>>? selectors = null) 
     {
         IQueryable<T> query = this.Entities;
         if (selectors is not null)
@@ -52,6 +51,12 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
             } 
         }
         return await query.FirstOrDefaultAsync(x => x.Id == id);
+    }
+
+    public Task DeleteRange(IEnumerable<T> entities)
+    {
+        _dbContext.Set<T>().RemoveRange(entities);
+        return Task.CompletedTask;
     }
 }
 

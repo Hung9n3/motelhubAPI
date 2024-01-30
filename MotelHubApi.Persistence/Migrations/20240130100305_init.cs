@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MotelHubApi.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,7 @@ namespace MotelHubApi.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Price = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -72,7 +72,7 @@ namespace MotelHubApi.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RoleId = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
+                    RoleId = table.Column<int>(type: "int", nullable: true, defaultValue: 2),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -95,7 +95,8 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_AspNetUsers_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -108,7 +109,7 @@ namespace MotelHubApi.Persistence.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Longtitude = table.Column<double>(type: "float", nullable: true),
                     Latitude = table.Column<double>(type: "float", nullable: true),
-                    HostId = table.Column<int>(type: "int", nullable: false),
+                    HostId = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
@@ -120,7 +121,8 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_Areas_AspNetUsers_HostId",
                         column: x => x.HostId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -229,12 +231,14 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_Rooms_Areas_AreaId",
                         column: x => x.AreaId,
                         principalTable: "Areas",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Rooms_AspNetUsers_OwnerId",
                         column: x => x.OwnerId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -267,7 +271,8 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_Contracts_AspNetUsers_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Contracts_AspNetUsers_HostId",
                         column: x => x.HostId,
@@ -277,7 +282,8 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_Contracts_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -296,8 +302,8 @@ namespace MotelHubApi.Persistence.Migrations
                     OwnerId = table.Column<int>(type: "int", nullable: true),
                     OwnerPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OwnerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RoomId = table.Column<int>(type: "int", nullable: false),
-                    PriceId = table.Column<double>(type: "float", nullable: true),
+                    RoomId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
@@ -314,7 +320,8 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_MeterReadings_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -335,12 +342,14 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_UserRoom_AspNetUsers_MemberId",
                         column: x => x.MemberId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UserRoom_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -350,7 +359,7 @@ namespace MotelHubApi.Persistence.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContractId = table.Column<int>(type: "int", nullable: false),
+                    ContractId = table.Column<int>(type: "int", nullable: true),
                     HostName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HostPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -383,7 +392,8 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_Bills_Contracts_ContractId",
                         column: x => x.ContractId,
                         principalTable: "Contracts",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -392,13 +402,13 @@ namespace MotelHubApi.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    RoomId = table.Column<int>(type: "int", nullable: false),
-                    AreaId = table.Column<int>(type: "int", nullable: false),
-                    MeterReadingId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    RoomId = table.Column<int>(type: "int", nullable: true),
+                    AreaId = table.Column<int>(type: "int", nullable: true),
+                    ContractId = table.Column<int>(type: "int", nullable: true),
+                    MeterReadingId = table.Column<int>(type: "int", nullable: true),
                     Data = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContractId = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
@@ -410,27 +420,32 @@ namespace MotelHubApi.Persistence.Migrations
                         name: "FK_Photos_Areas_AreaId",
                         column: x => x.AreaId,
                         principalTable: "Areas",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Photos_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Photos_Contracts_ContractId",
                         column: x => x.ContractId,
                         principalTable: "Contracts",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Photos_MeterReadings_MeterReadingId",
                         column: x => x.MeterReadingId,
                         principalTable: "MeterReadings",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Photos_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateIndex(
@@ -473,8 +488,7 @@ namespace MotelHubApi.Persistence.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_RoleId",
                 table: "AspNetUsers",
-                column: "RoleId",
-                unique: true);
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
