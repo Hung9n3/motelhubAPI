@@ -9,6 +9,20 @@ public class MeterReadingRepository : BaseRepository<MeterReading>, IMeterReadin
 	{
 	}
 
+    public override async Task<MeterReading> AddAsync(MeterReading entity)
+    {
+        if(!(await base._dbContext.MeterReadingPrices.AnyAsync(x => x.Price == entity.Price && x.Type == entity.Type)))
+        {
+            await base._dbContext.MeterReadingPrices.AddAsync(new MeterReadingPrice
+            {
+                Price = entity.Price.GetValueOrDefault(),
+                Type = entity.Type,
+            });
+        }
+        await base._dbContext.MeterReadings.AddAsync(entity);
+        return entity;
+    }
+
     public async Task<IEnumerable<MeterReading>> GetByPeriod(DateTime from, DateTime to)
     {
         var result = await base.Entities.Where(x => x.From >= from  && x.To <= to).ToListAsync();

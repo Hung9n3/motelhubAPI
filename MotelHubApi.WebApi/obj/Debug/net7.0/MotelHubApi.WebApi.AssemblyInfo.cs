@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MotelHubApi.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf3b00075e0cc6eaad2f9e533bbdaf0c08fe0700")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22ee7c55a0da7ddf09a95fa10683ae80793719bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("MotelHubApi.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MotelHubApi.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

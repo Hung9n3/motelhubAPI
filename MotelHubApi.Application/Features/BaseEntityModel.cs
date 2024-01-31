@@ -10,5 +10,4 @@ public class BaseEntityModel
 {
     public int Id { get; set; }
     public ICollection<ValidationError> ValidationErrors { get; set; } = new HashSet<ValidationError>();
-
 }

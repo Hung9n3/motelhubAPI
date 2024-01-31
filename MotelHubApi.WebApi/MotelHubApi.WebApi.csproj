@@ -26,7 +26,6 @@
     <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Controllers\Base\" />
     <Folder Include="Extensions\" />
   </ItemGroup>

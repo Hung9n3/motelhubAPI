@@ -9,11 +9,11 @@ public class Room : BaseEntity
 
 	public Area? Area { get; set; }
 	public User? Owner { get; set; }
-    public ICollection<UserRoom> UserRooms { get; set; } = new HashSet<UserRoom>();
-    public ICollection<User> Members { get; set; } = new HashSet<User>();
-    public ICollection<Photo> Photos { get; set; } = new HashSet<Photo>();
-    public ICollection<MeterReading> MeterReadings { get; set; } = new HashSet<MeterReading>();
-    public ICollection<Contract> Contracts { get; set; } = new HashSet<Contract>();
+    public List<UserRoom> UserRooms { get; set; } = new List<UserRoom>();
+    public List<User> Members { get; set; } = new List<User>();
+    public List<Photo> Photos { get; set; } = new List<Photo>();
+    public List<MeterReading> MeterReadings { get; set; } = new List<MeterReading>();
+    public List<Contract> Contracts { get; set; } = new List<Contract>();
 
     public Room()
 	{

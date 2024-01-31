@@ -6,7 +6,9 @@ public class BaseMeterReadingValidator<TCommand> : AbstractValidator<TCommand> w
 {
     public BaseMeterReadingValidator()
     {
-        RuleFor(command => command.Value).NotEqual(0).NotNull().WithMessage("Value is required");
+        RuleFor(command => command)
+            .Must(command => command.LastMonth.IsPositive() && command.ThisMonth.IsPositive()).WithMessage("Last month and This month can not empty")
+            .Must(command => command.LastMonth <= command.ThisMonth).WithMessage("Last month can not greater than this month");
         RuleFor(command => command.Price).NotNull().NotEmpty().WithMessage("Price is required");
     }
 }

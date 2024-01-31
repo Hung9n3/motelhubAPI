@@ -22,13 +22,6 @@ public class RoomController : ApiControllerBase
 		return Ok(result);
 	}
 
-	[HttpGet("area/{areaId}")]
-	public async Task<IActionResult> GetByArea(int? areaId)
-	{
-		var result = await _mediator.Send(new GetRoomsByAreaQuery(areaId));
-		return Ok(result);
-	}
-
 	[HttpPost]
 	public async Task<IActionResult> Create(CreateRoomCommand command)
 	{
@@ -38,6 +31,13 @@ public class RoomController : ApiControllerBase
 
 	[HttpPut]
 	public async Task<IActionResult> Update(UpdateRoomCommand command)
+	{
+		await _mediator.Send(command);
+		return Ok();
+	}
+
+	[HttpDelete]
+	public async Task<IActionResult> Delete(DeleteRoomCommand command)
 	{
 		await _mediator.Send(command);
 		return Ok();

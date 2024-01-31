@@ -298,3 +298,4 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.genruntimeconfig.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\ref\MotelHubApi.WebApi.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.MvcApplicationPartsAssemblyInfo.cs

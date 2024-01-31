@@ -7,7 +7,6 @@ public class MeterReading : BaseEntity
     public DateTime? To { get; set; }
 	public double? LastMonth { get; set; }
 	public double? ThisMonth { get; set; }
-	public double? Value { get; set; }
 	public MeterReadingType Type { get; set; }
 	public int? OwnerId { get; set; }
 	public string? OwnerPhone { get; set; }

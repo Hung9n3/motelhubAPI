@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MotelHubApi;
 
-public class BaseUserModel : IdentityUser<int>
+public class BaseUserModel : BaseEntityModel
 {
     public string Fullname { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;

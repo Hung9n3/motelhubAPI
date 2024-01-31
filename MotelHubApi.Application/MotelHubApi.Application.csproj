@@ -46,8 +46,6 @@
     <Folder Include="Interfaces\UnitOfWork\" />
     <Folder Include="Features\Room\Queries\" />
     <Folder Include="Features\Room\Commands\Create\" />
-    <Folder Include="Features\Room\Queries\GetByArea\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Features\Role\Commands\" />
     <Folder Include="Features\Role\Queries\" />
   </ItemGroup>

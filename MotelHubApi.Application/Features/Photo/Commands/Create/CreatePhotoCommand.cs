@@ -24,7 +24,8 @@ internal class CreatePhotoCommandHandler : BaseHandler<Photo, CreatePhotoCommand
         var validationResult = _validator.Validate(command);
         if (!validationResult.IsValid)
         {
-            throw new Exception($"{validationResult.Errors}");
+            string message = string.Join(", ", validationResult.Errors.Select(a => a.ErrorMessage));
+            throw new Exception($"{message}");
         }
 
         var photo = _mapper.Map<Photo>(command);

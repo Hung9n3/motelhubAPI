@@ -18,4 +18,14 @@ public class User : IdentityUser<int>, IEntity
     public ICollection<Contract> CustomerContracts { get; set; } = new HashSet<Contract>();
     public ICollection<Photo> Photos { get; set; } = new HashSet<Photo>();
     public ICollection<Area> Areas { get; set; } = new HashSet<Area>();
+    public DateTime CreatedAt { get; set; }
+    public DateTime ModifiedAt { get; set; }
+    public bool IsActive { get; set; }
+
+    public User()
+    {
+        CreatedAt = DateTime.Now;
+        ModifiedAt = DateTime.Now;
+        IsActive = true;
+    }
 }

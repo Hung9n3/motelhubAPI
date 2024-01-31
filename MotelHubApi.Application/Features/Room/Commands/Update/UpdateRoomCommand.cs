@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,9 @@ namespace MotelHubApi;
 
 public class UpdateRoomCommand : BaseRoomModel, IRequest
 {
-    public ICollection<UserRoom> UserRooms { get; set; } = new HashSet<UserRoom>();
-    public ICollection<BaseUserModel> Members { get; set; } = new HashSet<BaseUserModel>();
-    public ICollection<BasePhotoModel> Photos { get; set; } = new HashSet<BasePhotoModel>();
-    public ICollection<BaseMeterReadingModel> MeterReadings { get; set; } = new HashSet<BaseMeterReadingModel>();
-    public ICollection<BaseContractModel> Contracts { get; set; } = new HashSet<BaseContractModel>();
+    public List<BasePhotoModel> Photos { get; set; } = new List<BasePhotoModel>();
+    public List<UserRoom> UserRooms { get; set; } = new List<UserRoom>();
+    public List<BaseMeterReadingModel> MeterReadings { get; set; } = new List<BaseMeterReadingModel>();
 }
 
 public class UpdateRoomCommandHandler : BaseHandler<Room, UpdateRoomCommand, IRoomRepository>
@@ -34,8 +33,13 @@ public class UpdateRoomCommandHandler : BaseHandler<Room, UpdateRoomCommand, IRo
         {
             throw new Exception($"{validationResult.Errors}");
         }
-        var room = this._mapper.Map<Room>(request);
-        await this._repository.UpdateAsync(room);
+        var room = await base._repository.GetByIdAsync(
+            request.Id,
+            new List<Expression<Func<Room, object>>> { x => x.Photos, x => x.MeterReadings, x => x.Members});
+        base._mapper.Map(request, room);
+
+        room.Photos.UpdateRelated(request.Photos, base._mapper);
+        room.MeterReadings.UpdateRelated(request.MeterReadings, base._mapper);
         room.AddDomainEvent(new RoomUpdatedEvent(room));
         await this._unitOfWork.Save(cancellationToken);
     }

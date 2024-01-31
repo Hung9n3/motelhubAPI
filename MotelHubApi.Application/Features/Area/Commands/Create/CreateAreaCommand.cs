@@ -25,7 +25,8 @@ internal class CreateAreaCommandHandler : BaseHandler<Area, CreateAreaCommand, I
         var validationResult = this._validator.Validate(command);
         if(!validationResult.IsValid)
         {
-            throw new Exception($"{validationResult.Errors}");
+            string message = string.Join(", ", validationResult.Errors.Select(a => a.ErrorMessage));
+            throw new Exception($"{message}");
         }
 
         var area = base._mapper.Map<Area>(command);

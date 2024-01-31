@@ -13,6 +13,6 @@ public class BasePhotoValidator<TCommand> : AbstractValidator<TCommand> where TC
     public BasePhotoValidator()
     {
         RuleFor(cmd => cmd).Must(x => !string.IsNullOrWhiteSpace(x.Url) || (x.Data is not null && x.Data != Array.Empty<byte>())).WithMessage($"Data and Url are both empty");
-        RuleFor(cmd => cmd).Must(x => x.UserId != 0 || x.RoomId != 0 || x.AreaId != 0 || x.MeterReadingId != 0 || x.ContractId != 0).WithMessage($"At least a foreign key have to be set");
+        RuleFor(cmd => cmd).Must(x => x.UserId.IsPositive() || x.RoomId.IsPositive() || x.AreaId.IsPositive() || x.MeterReadingId.IsPositive() || x.ContractId.IsPositive()).WithMessage($"At least a foreign key have to be set");
     }
 }
