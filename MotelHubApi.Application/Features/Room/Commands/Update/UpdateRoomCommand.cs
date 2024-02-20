@@ -33,14 +33,16 @@ public class UpdateRoomCommandHandler : BaseHandler<Room, UpdateRoomCommand, IRo
         {
             throw new Exception($"{validationResult.Errors}");
         }
-        var room = await base._repository.GetByIdAsync(
+        var dbResult = await base._repository.GetByIdAsync(
             request.Id,
-            new List<Expression<Func<Room, object>>> { x => x.Photos, x => x.MeterReadings, x => x.Members});
-        base._mapper.Map(request, room);
-
-        room.Photos.UpdateRelated(request.Photos, base._mapper);
-        room.MeterReadings.UpdateRelated(request.MeterReadings, base._mapper);
-        room.AddDomainEvent(new RoomUpdatedEvent(room));
+            x => x.Photos, x => x.UserRooms);
+        if (dbResult is null)
+        {
+            throw new KeyNotFoundException();
+        }
+        base._mapper.Map(request, dbResult);
+        dbResult.Photos.UpdateRelated(request.Photos, base._mapper);
+        dbResult.AddDomainEvent(new RoomUpdatedEvent(dbResult));
         await this._unitOfWork.Save(cancellationToken);
     }
 }

@@ -11,20 +11,20 @@ using MediatR;
 
 namespace MotelHubApi;
 
-public class UpdateMeterReadingCommand : BaseMeterReadingModel, IRequest
+public class UpdateBillCommand : BaseBillModel, IRequest
 {
     public List<BasePhotoModel> Photos { get; set; } = new List<BasePhotoModel>();
 }
 
-public class UpdateMeterReadingCommandHandler : BaseHandler<MeterReading, UpdateMeterReadingCommand, IMeterReadingRepository>
+public class UpdateBillCommandHandler : BaseHandler<Bill, UpdateBillCommand, IBillRepository>
 {
-    IValidator<UpdateMeterReadingCommand> _validator;
-    public UpdateMeterReadingCommandHandler(IUnitOfWork unitOfWork, IMeterReadingRepository repository, IMapper mapper, IValidator<UpdateMeterReadingCommand> validator) : base(unitOfWork, repository, mapper)
+    IValidator<UpdateBillCommand> _validator;
+    public UpdateBillCommandHandler(IUnitOfWork unitOfWork, IBillRepository repository, IMapper mapper, IValidator<UpdateBillCommand> validator) : base(unitOfWork, repository, mapper)
     {
         this._validator = validator;
     }
 
-    public override async Task Handle(UpdateMeterReadingCommand request, CancellationToken cancellationToken)
+    public override async Task Handle(UpdateBillCommand request, CancellationToken cancellationToken)
     {
         var validationResult = this._validator.Validate(request);
         if (!validationResult.IsValid)
@@ -32,15 +32,14 @@ public class UpdateMeterReadingCommandHandler : BaseHandler<MeterReading, Update
             throw new Exception($"{validationResult.Errors}");
         }
         var dbResult = await base._repository.GetByIdAsync(
-            request.Id,
-            x => x.Photos);
+            request.Id);
         if (dbResult is null)
         {
             throw new KeyNotFoundException();
         }
         base._mapper.Map(request, dbResult);
-        dbResult.Photos.UpdateRelated(request.Photos, base._mapper);
-        dbResult.AddDomainEvent(new MeterReadingUpdatedEvent(dbResult));
+        
+        dbResult.AddDomainEvent(new BillUpdatedEvent(dbResult));
         await this._unitOfWork.Save(cancellationToken);
     }
 }

@@ -6,6 +6,9 @@ public class CreateContractValidator : BaseContractValidator<CreateContractComma
 {
     public CreateContractValidator() : base()
     {
+        RuleFor(cmd => cmd)
+            .Must(x => x.RoomId.IsPositive() && x.HostId.IsPositive() && x.CustomerId.IsPositive())
+            .WithMessage(x => $"{nameof(x.RoomId)}, {nameof(x.HostId)}, {nameof(x.CustomerId)} can not empty");
     }
 }
 

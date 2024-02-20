@@ -40,7 +40,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
             .ToListAsync();
     }
 
-    public virtual async Task<T?> GetByIdAsync(int id, IEnumerable<Expression<Func<T, object>>>? selectors = null) 
+    public virtual async Task<T?> GetByIdAsync(int id, params Expression<Func<T, object>>[] selectors) 
     {
         IQueryable<T> query = this.Entities;
         if (selectors is not null)

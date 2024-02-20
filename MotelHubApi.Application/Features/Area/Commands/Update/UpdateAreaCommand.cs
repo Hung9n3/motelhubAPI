@@ -37,9 +37,9 @@ public class UpdateAreaCommandHandler : BaseHandler<Area, UpdateAreaCommand, IAr
         }
         var dtoPhotoIds = request.Photos.Select(x => x.Id).ToList();
         var area = await base._repository.GetByIdAsync(
-            request.Id, 
-            new List<Expression<Func<Area, object>>> { x => x.Photos, x => x.Rooms});
-        if(area is null)
+            request.Id,
+            x => x.Photos, x => x.Rooms);
+        if (area is null)
         {
             throw new Exception("Not Found");
         }

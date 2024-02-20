@@ -22,6 +22,6 @@ public class Contract : BaseEntity
     public User? Customer { get; set; }
     public User? Host { get; set; }
     public Room? Room { get; set; }
-    public ICollection<Photo> Photos { get; set; } = new HashSet<Photo>();
-    public ICollection<Bill> Bills { get; set; } = new List<Bill>();
+    public List<Photo> Photos { get; set; } = new List<Photo>();
+    public List<Bill> Bills { get; set; } = new List<Bill>();
 }

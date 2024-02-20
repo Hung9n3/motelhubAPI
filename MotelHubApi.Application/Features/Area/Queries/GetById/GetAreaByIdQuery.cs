@@ -28,7 +28,7 @@ internal class GetAreaByIdQueryHandler : BaseHandler<Area, GetAreaByIdQuery, IAr
     {
         var dbResult = await base._repository.GetByIdAsync(
             request.AreaId,
-            new List<Expression<Func<Area, object>>> { x => x.Rooms, x => x.Host, x => x.Photos});
+            x => x.Rooms, x => x.Host, x => x.Photos);
         var result = base._mapper.Map<GetAreaByIdDto>(dbResult);
         return result;
     }

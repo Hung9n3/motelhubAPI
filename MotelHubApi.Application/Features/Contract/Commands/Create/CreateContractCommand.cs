@@ -27,9 +27,9 @@ internal class CreateContractCommandHandler : BaseHandler<Contract, CreateContra
             throw new Exception($"{validationResult.Errors}");
         }
 
-        var cContract = base._mapper.Map<Contract>(command);
-        var result = await _repository.AddAsync(cContract);
-        cContract.AddDomainEvent(new ContractCreatedEvent(cContract));
+        var contract = base._mapper.Map<Contract>(command);
+        var result = await _repository.AddAsync(contract);
+        contract.AddDomainEvent(new ContractCreatedEvent(contract));
         await _unitOfWork.Save(cancellationToken);
         return result;
     }

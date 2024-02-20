@@ -31,6 +31,4 @@ public class BaseBillModel : BaseEntityModel
     public double? WaterPrice { get; set; }
     public double? WaterTotal { get; set; }
     public double? Oweing { get; set; }
-
-    public BaseContractModel? Contract { get; set; }
 }

@@ -29,7 +29,7 @@ internal class GetRoomByIdQueryHandler : BaseHandler<Room, GetRoomByIdQuery, IRo
     {
         var dbResult = await base._repository.GetByIdAsync(
             request.Id, 
-            new List<Expression<Func<Room, object>>> { x => x.Area, x => x.Members, x => x.MeterReadings, x => x.Photos, x => x.Contracts });
+            x => x.Area, x => x.Members, x => x.MeterReadings, x => x.Photos, x => x.Contracts);
         var result = _mapper.Map<GetRoomByIdDto>(dbResult);
         return result;
     }
