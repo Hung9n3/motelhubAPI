@@ -5,15 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.Domain", "MotelHubApi.Domain\MotelHubApi.Domain.csproj", "{E0337228-6456-4CCA-8458-B8085D288364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Application", "MotelHubApi.Application\MotelHubApi.Application.csproj", "{E83EAC8E-6A2D-4712-AFAC-A99CCCD550D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.Application", "MotelHubApi.Application\MotelHubApi.Application.csproj", "{E83EAC8E-6A2D-4712-AFAC-A99CCCD550D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Infrastructure", "MotelHubApi.Infrastructure\MotelHubApi.Infrastructure.csproj", "{BDE07713-0854-4AED-99BA-F68F15CA1B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.Infrastructure", "MotelHubApi.Infrastructure\MotelHubApi.Infrastructure.csproj", "{BDE07713-0854-4AED-99BA-F68F15CA1B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Persistence", "MotelHubApi.Persistence\MotelHubApi.Persistence.csproj", "{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.Persistence", "MotelHubApi.Persistence\MotelHubApi.Persistence.csproj", "{5617BC37-5725-41C8-A8C8-5BD6E3CE9053}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.Shared", "MotelHubApi.Shared\MotelHubApi.Shared.csproj", "{84B76CCC-ABBB-4800-921A-D65C14973346}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.Shared", "MotelHubApi.Shared\MotelHubApi.Shared.csproj", "{84B76CCC-ABBB-4800-921A-D65C14973346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotelHubApi.WebApi", "MotelHubApi.WebApi\MotelHubApi.WebApi.csproj", "{3705B4E0-46F2-4D0F-B71E-8987CDED1DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotelHubApi.WebApi", "MotelHubApi.WebApi\MotelHubApi.WebApi.csproj", "{3705B4E0-46F2-4D0F-B71E-8987CDED1DA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {630ADE7A-CECF-4C9C-9B6D-7B69F4D820D5}
 	EndGlobalSection
 EndGlobal
