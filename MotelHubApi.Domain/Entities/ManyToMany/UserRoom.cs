@@ -5,7 +5,7 @@ namespace MotelHubApi
 	{
 		public int MemberId { get; set; }
 		public int RoomId { get; set; }
-
+		public bool IsEnd { get; set; }
 		public User? Member { get; set; }
 		public Room? Room { get; set; }
     }

@@ -38,9 +38,7 @@
     <None Remove="Features\Area\Queries\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\Repositories\" />
     <Folder Include="Interfaces\Services\" />
     <Folder Include="Commons\Mappings\" />
     <Folder Include="Interfaces\UnitOfWork\" />
