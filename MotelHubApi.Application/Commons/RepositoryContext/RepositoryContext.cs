@@ -25,7 +25,7 @@ public class RepositoryContext
         this.Role = role;
         this.Room = room;
         this.User = user;
-        this.MeterReadingPrice = meterReadingPrice;
+        this.MeterReading = meterReading;
         this.Bill = bill;
         this.Contract = contract;
     }

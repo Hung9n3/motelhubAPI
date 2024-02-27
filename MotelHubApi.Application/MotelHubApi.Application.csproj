@@ -39,8 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Features\RatingAndReview\Commands\Create\" />
-    <Folder Include="Features\RatingAndReview\Queries\" />
+    <Folder Include="Features\Room\Commands\NewFolder\" />
     <Folder Include="Interfaces\Services\" />
     <Folder Include="Commons\Mappings\" />
     <Folder Include="Interfaces\UnitOfWork\" />

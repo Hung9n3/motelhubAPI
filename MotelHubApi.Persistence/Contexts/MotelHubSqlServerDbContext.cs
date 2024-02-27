@@ -25,6 +25,8 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
     public virtual DbSet<Contract> Contracts { get; set; } = null!;
     public virtual DbSet<Bill> Bills { get; set; } = null!;
     public virtual DbSet<Photo> Photos { get; set; } = null!;
+    public virtual DbSet<RatingAndReview> RatingAndReviews { get; set; } = null!;
+    public virtual DbSet<Appointment> Appointments { get; set; } = null!;
 
     public override int SaveChanges()
     {
@@ -62,6 +64,8 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
                 .HasColumnType("nvarchar(256)");
 
             user.HasMany(x => x.Photos).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);   
+            user.HasMany(x => x.HostAppointments).WithOne(x => x.Host).HasForeignKey(x => x.HostId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);   
+            user.HasMany(x => x.CustomerAppointments).WithOne(x => x.Customer).HasForeignKey(x => x.CustomerId).IsRequired(false).OnDelete(DeleteBehavior.NoAction);   
             user.HasMany(x => x.Areas).WithOne(x => x.Host).HasForeignKey(x => x.HostId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
             user.HasMany(x => x.OwnRooms).WithOne(x => x.Owner).HasForeignKey(x => x.OwnerId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
             user.HasMany(x => x.CustomerContracts).WithOne(x => x.Customer).HasForeignKey(x => x.CustomerId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
@@ -80,6 +84,7 @@ public class MotelHubSqlServerDbContext : IdentityDbContext<User, Role, int>
         builder.Entity<Room>(room =>
         {
             room.HasMany(x => x.Photos).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
+            room.HasMany(x => x.Appointments).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
             room.HasMany(x => x.MeterReadings).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
             room.HasMany(x => x.Contracts).WithOne(x => x.Room).HasForeignKey(x => x.RoomId).IsRequired(false).OnDelete(DeleteBehavior.SetNull);
 

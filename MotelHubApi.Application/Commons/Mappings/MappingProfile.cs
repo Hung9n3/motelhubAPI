@@ -80,6 +80,24 @@ public class MappingProfile : Profile
         CreateMap<Contract, BaseContractModel>();
         CreateMap<Contract, GetContractByIdDto>();
         #endregion
+
+        #region RatingAndReview
+        CreateMap<BaseRatingAndReviewModel, RatingAndReview>();
+        CreateMap<CreateRatingAndReviewCommand, RatingAndReview>();
+        CreateMap<UpdateRatingAndReviewCommand, RatingAndReview>();
+
+        CreateMap<RatingAndReview, BaseRatingAndReviewModel>();
+        CreateMap<RatingAndReview, GetRatingAndReviewByIdDto>();
+        #endregion
+
+        #region Appointment
+        CreateMap<BaseAppointmentModel, Appointment>();
+        CreateMap<CreateAppointmentCommand, Appointment>();
+        CreateMap<UpdateAppointmentCommand, Appointment>();
+
+        CreateMap<Appointment, BaseAppointmentModel>();
+        CreateMap<Appointment, GetAppointmentByIdDto>();
+        #endregion
     }
 }
 
