@@ -26,7 +26,9 @@ public class MappingProfile : Profile
         CreateMap<Area, BaseAreaModel>();
         CreateMap<Area, GetAreaByIdDto>();
         CreateMap<Area, GetAreaByOwnerDto>()
-            .ForMember(des => des.RoomCount, opt => opt.MapFrom(src => src.Rooms == null ? 0 : src.Rooms.Count));
+            .ForMember(des => des.RoomCount, opt => opt.MapFrom(src => src.Rooms == null ? 0 : src.Rooms.Count))
+            .ForMember(des => des.EmptyRoom, opt => opt.MapFrom(src => src.Rooms == null ? 0 : src.Rooms.Where(x => x.OwnerId > 0).Count()))
+            ;
         #endregion 
 
         #region Room
@@ -51,6 +53,7 @@ public class MappingProfile : Profile
 
         CreateMap<MeterReading, BaseMeterReadingModel>();
         CreateMap<MeterReading, GetMeterReadingByIdDto>();
+        CreateMap<MeterReading, GetMeterReadingByRoomDto>();
         #endregion
 
         #region Photo

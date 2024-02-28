@@ -26,7 +26,10 @@ public class Bill : BaseEntity
     public double? WaterValue { get; set; }
     public double? WaterPrice { get; set; }
     public double? WaterTotal { get; set; }
+    public double? OtherFee { get; set; }
     public double? Oweing { get; set; }
+    public bool IsHostConfirmed { get; set; }
+    public bool IsCustomerConfirmed { get; set; }
 
     public Contract? Contract { get; set; }
 }
