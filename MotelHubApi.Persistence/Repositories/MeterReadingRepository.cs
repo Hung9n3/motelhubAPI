@@ -35,6 +35,12 @@ public class MeterReadingRepository : BaseRepository<MeterReading>, IMeterReadin
         return result;
     }
 
+    public async Task<IEnumerable<MeterReading>> GetByRoomAndOwner(int roomId, int ownerId)
+    {
+        var result = await base.Entities.Where(x => x.RoomId == roomId && x.OwnerId == ownerId).ToListAsync();
+        return result;
+    }
+
     public async Task<IEnumerable<MeterReading>> GetByUser(int ownerId)
     {
         var result = await base.Entities.Where(x => x.OwnerId == ownerId).ToListAsync();

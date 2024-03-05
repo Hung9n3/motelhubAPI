@@ -40,10 +40,8 @@
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="Features\Room\Commands\NewFolder\" />
-    <Folder Include="Interfaces\Services\" />
     <Folder Include="Commons\Mappings\" />
     <Folder Include="Interfaces\UnitOfWork\" />
-    <Folder Include="Features\Room\Queries\" />
     <Folder Include="Features\Room\Commands\Create\" />
     <Folder Include="Features\Role\Commands\" />
     <Folder Include="Features\Role\Queries\" />
@@ -54,6 +52,7 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+    <PackageReference Include="NEST" Version="7.17.5" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

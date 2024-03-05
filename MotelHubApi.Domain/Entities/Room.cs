@@ -7,6 +7,7 @@ public class Room : BaseEntity
 	public int? OwnerId { get; set; }
 	public int? AreaId { get; set; }
 	public double Rating { get; set; }
+    public decimal Price { get; set; }
 
 	public Area? Area { get; set; }
 	public User? Owner { get; set; }

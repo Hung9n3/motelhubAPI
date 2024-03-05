@@ -264,8 +264,17 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsCustomerConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsHostConfirmed")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<double?>("OtherFee")
+                        .HasColumnType("float");
 
                     b.Property<double?>("Oweing")
                         .HasColumnType("float");
@@ -343,6 +352,12 @@ namespace MotelHubApi.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsCustomerConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsHostConfirmed")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedAt")
