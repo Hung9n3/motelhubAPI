@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Nest;
 
 namespace MotelHubApi;
 
@@ -8,6 +9,7 @@ public class BaseEntity : IEntity
 
     public int Id { get; set; }
 
+    [Ignore]
     [NotMapped]
     public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents.AsReadOnly();
 

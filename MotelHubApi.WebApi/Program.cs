@@ -10,8 +10,8 @@ ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddApplicationLayer();
-builder.Services.AddInfrastructureLayer();
-builder.Services.AddPersistenceLayer(builder.Configuration);
+builder.Services.AddInfrastructureLayer(configuration);
+builder.Services.AddPersistenceLayer(configuration);
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
@@ -23,7 +23,7 @@ builder.Services.Configure<EmailConfig>(configuration.GetSection(nameof(EmailCon
 builder.Services.Configure<JwtConfig>(configuration.GetSection(nameof(JwtConfig)));
 #endregion
 
-builder.Services.AddAuth(builder.Configuration);
+builder.Services.AddAuth(configuration);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -69,7 +69,7 @@ builder.Services.AddApiVersioning(opt =>
 });
 
 //Cors
-var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+var allowedOrigins = configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
 
 builder.Services.AddCors(options =>
 {

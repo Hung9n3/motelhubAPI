@@ -7,40 +7,33 @@ using Nest;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MotelHubApi.Infrastructure;
-public class ElasticsearchService<TEntity> : IElasticsearchService<TEntity> where TEntity : class, IEntity
+public class ElasticsearchService: IElasticsearchService
 {
     private readonly IElasticClient _elasticClient;
-    private readonly string _indexName;
 
-    public ElasticsearchService(string connectionString, string indexName)
+    public ElasticsearchService(IElasticClient elasticClient)
     {
-        var connectionPool = new SingleNodeConnectionPool(new Uri(connectionString));
-        var connectionSettings = new ConnectionSettings(connectionPool)
-            .DefaultIndex(indexName);
-
-        _elasticClient = new ElasticClient(connectionSettings);
-        _indexName = indexName;
+        this._elasticClient = elasticClient;
     }
-    public async Task IndexDocument(TEntity document)
+    public async Task IndexDocument<TEntity>(TEntity document) where TEntity : class, IEntity
     {
-        var indexResponse = _elasticClient.IndexDocument(document);
+        var indexResponse = await _elasticClient.IndexDocumentAsync(document);
         if (!indexResponse.IsValid)
         {
             // Handle indexing error
         }
     }
 
-    public async Task<List<TEntity>> SearchList(QueryContainer[] queries)
+    public async Task<List<TEntity>> SearchByName<TEntity>(string keyWord, PagingOptions pagingOptions) where TEntity : class, IEntity
     {
         var searchDescriptor = new SearchDescriptor<TEntity>()
-        .Index(_indexName)
         .Query(q => q
-            .Bool(b => b
-                .Must(queries)
-                )
-        );
+            .QueryString(qs => qs.Query($"*{keyWord}*"))
+        )
+        .Skip(pagingOptions.PageCount*pagingOptions.PageSize)
+        .Size(pagingOptions.PageSize);
 
-        var searchResponse = _elasticClient.Search<TEntity>(searchDescriptor);
+        var searchResponse = await _elasticClient.SearchAsync<TEntity>(searchDescriptor);
 
         if (searchResponse.IsValid)
         {

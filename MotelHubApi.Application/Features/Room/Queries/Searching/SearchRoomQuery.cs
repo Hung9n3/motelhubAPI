@@ -15,8 +15,8 @@ public class SearchRoomQuery : BaseRoomModel, IRequest<List<SearchRoomResult>>
 
 internal class SearchRoomHandler : BaseHandler<Room, SearchRoomQuery, IRoomRepository, List<SearchRoomResult>>
 {
-    private readonly IElasticsearchService<Room> _searchService;
-    public SearchRoomHandler(IUnitOfWork unitOfWork, IRoomRepository repository, IMapper mapper, IElasticsearchService<Room> searchServicee) : base(unitOfWork, repository, mapper)
+    private readonly IElasticsearchService _searchService;
+    public SearchRoomHandler(IUnitOfWork unitOfWork, IRoomRepository repository, IMapper mapper, IElasticsearchService searchServicee) : base(unitOfWork, repository, mapper)
     {
         _searchService = searchServicee;
     }
@@ -42,7 +42,7 @@ internal class SearchRoomHandler : BaseHandler<Room, SearchRoomQuery, IRoomRepos
         {
             stringQueries.Add(request.GetRangeQuery(nameof(request.Price), request.FromPrice, request.ToPrice));
         }
-        var searchResult = await this._searchService.SearchList(queries.ToArray()); 
+        var searchResult = await this._searchService.SearchByName<Room>(queries.ToArray()); 
         var result = base._mapper.Map<List<SearchRoomResult>>(searchResult);
         return result;
     }

@@ -299,3 +299,5 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.genruntimeconfig.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\ref\MotelHubApi.WebApi.dll
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\Elasticsearch.Net.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\Nest.dll
