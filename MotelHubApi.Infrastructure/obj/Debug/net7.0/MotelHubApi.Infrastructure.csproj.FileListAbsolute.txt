@@ -33,8 +33,8 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHubApi.Infrastructure.AssemblyInfo.cs
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHubApi.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHubApi.Infrastructure.sourcelink.json
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHubApi.Infrastructure.csproj.CopyComplete
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHubApi.Infrastructure.dll
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\refint\MotelHubApi.Infrastructure.dll
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHubApi.Infrastructure.pdb
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\ref\MotelHubApi.Infrastructure.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.Infrastructure\obj\Debug\net7.0\MotelHub.A460DE82.Up2Date

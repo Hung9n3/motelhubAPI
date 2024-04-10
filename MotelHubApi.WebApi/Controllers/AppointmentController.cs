@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MotelHubApi.WebApi;
 
-[Authorize(Policy = "IsUser")]
+//[Authorize(Policy = "IsUser")]
 public class AppointmentController : ApiControllerBase
 {
     public AppointmentController(IMediator mediator) : base(mediator)

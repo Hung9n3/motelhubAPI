@@ -18,9 +18,9 @@
     <ProjectReference Include="..\MotelHubApi.Application\MotelHubApi.Application.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Elastic.Clients.Elasticsearch" Version="8.12.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.15" />
-    <PackageReference Include="NEST" Version="7.17.5" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

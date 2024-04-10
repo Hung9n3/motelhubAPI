@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Elasticsearch.Net;
 using Nest;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MotelHubApi.Infrastructure;
-public class ElasticsearchService: IElasticsearchService
+public class ElasticsearchService : IElasticsearchService
 {
     private readonly IElasticClient _elasticClient;
 
@@ -24,16 +22,29 @@ public class ElasticsearchService: IElasticsearchService
         }
     }
 
-    public async Task<List<TEntity>> SearchByName<TEntity>(string keyWord, PagingOptions pagingOptions) where TEntity : class, IEntity
+    public async Task<List<TEntity>> Search<TEntity>(SearchOptions searchOptions) where TEntity : class, IEntity
     {
-        var searchDescriptor = new SearchDescriptor<TEntity>()
-        .Query(q => q
-            .QueryString(qs => qs.Query($"*{keyWord}*"))
-        )
-        .Skip(pagingOptions.PageCount*pagingOptions.PageSize)
-        .Size(pagingOptions.PageSize);
+        var searchContainer = new List<QueryContainer>();
 
-        var searchResponse = await _elasticClient.SearchAsync<TEntity>(searchDescriptor);
+        foreach (var query in searchOptions.SearchQueries)
+        {
+            searchContainer.Add(new()
+            {
+                
+            });
+        }
+
+        var filterContainer = new List<QueryContainer>();
+
+        var request = new SearchRequest<TEntity>()
+        {
+            Query = new BoolQuery
+            {
+                Must = searchContainer,
+                Filter = filterContainer
+            },
+        };
+        var searchResponse = await _elasticClient.SearchAsync<TEntity>(request);
 
         if (searchResponse.IsValid)
         {

@@ -292,7 +292,6 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.MotelHubApi.WebApi.props
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\scopedcss\bundle\MotelHubApi.WebApi.styles.css
-C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.csproj.CopyComplete
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.dll
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\refint\MotelHubApi.WebApi.dll
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.pdb
@@ -301,3 +300,6 @@ C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHubApi.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\Elasticsearch.Net.dll
 C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\Nest.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\obj\Debug\net7.0\MotelHub.95DE975B.Up2Date
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\Elastic.Clients.Elasticsearch.dll
+C:\Users\HungDoDuy\source\repos\motelhubAPI\MotelHubApi.WebApi\bin\Debug\net7.0\Elastic.Transport.dll

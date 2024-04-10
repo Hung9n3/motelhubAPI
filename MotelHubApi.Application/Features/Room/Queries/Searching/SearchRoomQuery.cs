@@ -23,27 +23,11 @@ internal class SearchRoomHandler : BaseHandler<Room, SearchRoomQuery, IRoomRepos
 
     public override async Task<List<SearchRoomResult>> Handle(SearchRoomQuery request, CancellationToken cancellationToken)
     {
-        var queries = new List<SearchingQuery>();
+        var queries = new List<SearchOptions>();
 
         var stringQueries = new List<string>();
-        if(request.SearchName != null)
-        {
-            stringQueries.Add(request.GetContainStringQuery(nameof(request.Name), request.SearchName));
-        }
-        if(request.FromAcreage != null && request.ToAcreage != null)
-        {
-            stringQueries.Add(request.GetRangeQuery(nameof(request.Acreage), request.FromAcreage, request.ToAcreage));
-        }
-        if(request.AboveRating != null)
-        {
-            stringQueries.Add(request.GetGreaterThanOrEqualQuery(nameof(request.Rating), request.AboveRating));
-        }
-        if(request.FromPrice != null && request.ToPrice != null)
-        {
-            stringQueries.Add(request.GetRangeQuery(nameof(request.Price), request.FromPrice, request.ToPrice));
-        }
-        var searchResult = await this._searchService.SearchByName<Room>(queries.ToArray()); 
-        var result = base._mapper.Map<List<SearchRoomResult>>(searchResult);
+        
+        var result = base._mapper.Map<List<SearchRoomResult>>(null);
         return result;
     }
 }
