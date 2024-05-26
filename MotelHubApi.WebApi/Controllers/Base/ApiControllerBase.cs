@@ -10,13 +10,76 @@ namespace MotelHubApi.WebApi;
 [ApiVersion("1.0")]
 [Route("api/[controller]")]
 //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-public abstract class ApiControllerBase : ControllerBase
+public abstract class ApiControllerBase<T, Logic> : ControllerBase
+    where T : IEntity
+    where Logic : IBaseLogic<T>
 {
-    protected readonly IMediator _mediator;
 
-    public ApiControllerBase(IMediator mediator)
+    protected Logic _logic;
+
+    public ApiControllerBase(Logic logic)
     {
-        _mediator = mediator;
+        this._logic = logic;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        try
+        {
+            var result = await this._logic.GetAllAsync();
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+    }
+
+    [HttpGet("id")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        try
+        {
+            var result = await this._logic.GetByIdAsync(id);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+    }
+
+    [HttpDelete()]
+    public async Task<IActionResult> GetById([FromBody] T entity)
+    {
+        try
+        {
+            await this._logic.DeleteAsync(entity);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+    }
+
+    [HttpPost()]
+    public async Task<IActionResult> Save([FromBody] T entity)
+    {
+        try
+        {
+            await this._logic.SaveAsync(entity);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
     }
 
     protected int GetUserId()

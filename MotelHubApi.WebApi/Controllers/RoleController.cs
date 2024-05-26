@@ -4,23 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MotelHubApi.WebApi;
 
-public class RoleController : ApiControllerBase
+public class RoleController : ApiControllerBase<Role, IRoleLogic>
 {
-    public RoleController(IMediator mediator) : base(mediator)
+    public RoleController(IRoleLogic logic) : base(logic)
     {
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Create(CreateRoleCommand command)
-    {
-        var result = await base._mediator.Send(command);
-        return Ok(result);
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
-    {
-        return Ok();
     }
 }
 

@@ -39,14 +39,11 @@ public static class ServiceExtensions
             .AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork))
             .AddTransient<IAreaRepository, AreaRepository>()
             .AddTransient<IRoomRepository, RoomRepository>()
-            .AddTransient<IMeterReadingRepository, MeterReadingRepository>()
-            .AddTransient<IMeterReadingPriceRepository, MeterReadingPriceRepository>()
             .AddTransient<IContractRepository, ContractRepository>()
             .AddTransient<IBillRepository, BillRepository>()
             .AddTransient<IPhotoRepository, PhotoRepository>()
             .AddTransient<IUserRepository, UserRepository>()
             .AddTransient<IAppointmentRepository, AppointmentRepository>()
-            .AddTransient<IRatingAndReviewRepository, RatingAndReviewRepository>()
             .AddTransient<IRoleRepository, RoleRepository>()
             ;
     }

@@ -5,42 +5,10 @@ using MotelHubApi.Shared;
 
 namespace MotelHubApi.WebApi;
 
-public class RoomController : ApiControllerBase
+public class RoomController : ApiControllerBase<Room, IRoomLogic>
 {
-	public RoomController(IMediator mediator) : base(mediator)
-	{
-	}
-
-	[HttpGet("{roomId}")]
-	public async Task<IActionResult> GetById(int roomId)
-	{
-		var result = await _mediator.Send(new GetRoomByIdQuery(roomId));
-		if(result == null)
-		{
-			return NotFound();
-		}
-		return Ok(result);
-	}
-
-	[HttpPost]
-	public async Task<IActionResult> Create(CreateRoomCommand command)
-	{
-		var result = await _mediator.Send(command);
-		return CreatedAtAction(nameof(Create), new { id = result });
-	}
-
-	[HttpPut]
-	public async Task<IActionResult> Update(UpdateRoomCommand command)
-	{
-		await _mediator.Send(command);
-		return Ok();
-	}
-
-	[HttpDelete]
-	public async Task<IActionResult> Delete(DeleteRoomCommand command)
-	{
-		await _mediator.Send(command);
-		return Ok();
-	}
+    public RoomController(IRoomLogic logic) : base(logic)
+    {
+    }
 }
 

@@ -7,14 +7,7 @@ public class Contract : BaseEntity
 {
     public string? Title { get; set; }
     public int? CustomerId { get; set; }
-    public int? HostId { get; set; }
     public int? RoomId { get; set; }
-    public string? RoomName { get; set; }
-    public string? HostName { get; set; }
-    public string? HostPhone { get; set; }
-    public string? CustomerName { get; set; }
-    public string? CustomerPhone { get; set; }
-    public string? RoomAddress { get; set; }
     public bool IsHostConfirmed { get; set; }
     public bool IsCustomerConfirmed { get; set; }
     public DateTime? StartDate { get; set; }

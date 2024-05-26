@@ -15,18 +15,6 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
 
     public IQueryable<T> Entities => _dbContext.Set<T>();
 
-    public virtual async Task<T> AddAsync(T entity)
-    {
-        await _dbContext.Set<T>().AddAsync(entity);
-        return entity;
-    }
-
-    public virtual async Task UpdateAsync(T entity)
-    {
-        var exist = await _dbContext.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == entity.Id) ?? throw new Exception("Not Found");
-        _dbContext.Update(entity);
-    }
-
     public virtual Task DeleteAsync(T entity)
     {
         var a = _dbContext.Set<T>().Remove(entity);
@@ -53,10 +41,22 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
         return await query.FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public Task DeleteRange(IEnumerable<T> entities)
+    public async Task SaveAsync(T entity)
     {
-        _dbContext.Set<T>().RemoveRange(entities);
-        return Task.CompletedTask;
+        try
+        {
+            var existed = await this.Entities.FirstOrDefaultAsync(x => x.Id == entity.Id);
+            if(existed != null)
+            {
+                this._dbContext.Update(entity);
+                return;
+            }
+            this._dbContext.Add(entity);
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
     }
 }
 

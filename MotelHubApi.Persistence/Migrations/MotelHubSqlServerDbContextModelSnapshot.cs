@@ -142,15 +142,17 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<DateTime?>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("HostId")
+                    b.Property<int?>("Duration")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("IsAccepted")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool?>("IsCancel")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
@@ -165,8 +167,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
-
-                    b.HasIndex("HostId");
 
                     b.HasIndex("RoomId");
 
@@ -228,12 +228,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerPhone")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("ElectricFromDate")
                         .HasColumnType("datetime2");
 
@@ -249,35 +243,17 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<DateTime?>("ElectricToDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double?>("ElectricTotal")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("ElectricValue")
-                        .HasColumnType("float");
-
-                    b.Property<string>("HostName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HostPhone")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsCustomerConfirmed")
+                    b.Property<bool>("IsConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsHostConfirmed")
+                    b.Property<bool>("IsPublished")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<double?>("OtherFee")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("Oweing")
-                        .HasColumnType("float");
 
                     b.Property<DateTime?>("RoomFromDate")
                         .HasColumnType("datetime2");
@@ -303,12 +279,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<DateTime?>("WaterToDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double?>("WaterTotal")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("WaterValue")
-                        .HasColumnType("float");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ContractId");
@@ -333,23 +303,11 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerPhone")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("HostId")
                         .HasColumnType("int");
-
-                    b.Property<string>("HostName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HostPhone")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -363,14 +321,8 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("RoomAddress")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("RoomId")
                         .HasColumnType("int");
-
-                    b.Property<string>("RoomName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("datetime2");
@@ -387,96 +339,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasIndex("RoomId");
 
                     b.ToTable("Contracts");
-                });
-
-            modelBuilder.Entity("MotelHubApi.MeterReading", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("From")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("LastMonth")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("OwnerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("OwnerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OwnerPhone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("RoomId")
-                        .HasColumnType("int");
-
-                    b.Property<double?>("ThisMonth")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("To")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OwnerId");
-
-                    b.HasIndex("RoomId");
-
-                    b.ToTable("MeterReadings");
-                });
-
-            modelBuilder.Entity("MotelHubApi.MeterReadingPrice", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Type", "Price")
-                        .IsUnique();
-
-                    b.ToTable("MeterReadingPrices");
                 });
 
             modelBuilder.Entity("MotelHubApi.Photo", b =>
@@ -502,9 +364,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("MeterReadingId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
@@ -523,49 +382,11 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.HasIndex("ContractId");
 
-                    b.HasIndex("MeterReadingId");
-
                     b.HasIndex("RoomId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Photos");
-                });
-
-            modelBuilder.Entity("MotelHubApi.RatingAndReview", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoomId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double?>("Rating")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId", "RoomId");
-
-                    b.HasIndex("RoomId");
-
-                    b.ToTable("RatingAndReviews");
                 });
 
             modelBuilder.Entity("MotelHubApi.Role", b =>
@@ -635,6 +456,9 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.Property<int?>("OwnerId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<double>("Rating")
                         .HasColumnType("float");
@@ -770,6 +594,50 @@ namespace MotelHubApi.Persistence.Migrations
                     b.ToTable("UserRoom");
                 });
 
+            modelBuilder.Entity("MotelHubApi.WorkOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatorId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsCustomerPay")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsOpen")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double?>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatorId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("WorkOrders");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("MotelHubApi.Role", null)
@@ -824,13 +692,8 @@ namespace MotelHubApi.Persistence.Migrations
             modelBuilder.Entity("MotelHubApi.Appointment", b =>
                 {
                     b.HasOne("MotelHubApi.User", "Customer")
-                        .WithMany("CustomerAppointments")
+                        .WithMany("Appointments")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("MotelHubApi.User", "Host")
-                        .WithMany("HostAppointments")
-                        .HasForeignKey("HostId")
                         .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("MotelHubApi.Room", "Room")
@@ -839,8 +702,6 @@ namespace MotelHubApi.Persistence.Migrations
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Customer");
-
-                    b.Navigation("Host");
 
                     b.Navigation("Room");
                 });
@@ -873,9 +734,8 @@ namespace MotelHubApi.Persistence.Migrations
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("MotelHubApi.User", "Host")
-                        .WithMany("HostContracts")
-                        .HasForeignKey("HostId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .WithMany()
+                        .HasForeignKey("HostId");
 
                     b.HasOne("MotelHubApi.Room", "Room")
                         .WithMany("Contracts")
@@ -885,22 +745,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Navigation("Customer");
 
                     b.Navigation("Host");
-
-                    b.Navigation("Room");
-                });
-
-            modelBuilder.Entity("MotelHubApi.MeterReading", b =>
-                {
-                    b.HasOne("MotelHubApi.User", "Owner")
-                        .WithMany()
-                        .HasForeignKey("OwnerId");
-
-                    b.HasOne("MotelHubApi.Room", "Room")
-                        .WithMany("MeterReadings")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Owner");
 
                     b.Navigation("Room");
                 });
@@ -917,11 +761,6 @@ namespace MotelHubApi.Persistence.Migrations
                         .HasForeignKey("ContractId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("MotelHubApi.MeterReading", "MeterReading")
-                        .WithMany("Photos")
-                        .HasForeignKey("MeterReadingId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
                     b.HasOne("MotelHubApi.Room", "Room")
                         .WithMany("Photos")
                         .HasForeignKey("RoomId")
@@ -935,27 +774,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Navigation("Area");
 
                     b.Navigation("Contract");
-
-                    b.Navigation("MeterReading");
-
-                    b.Navigation("Room");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MotelHubApi.RatingAndReview", b =>
-                {
-                    b.HasOne("MotelHubApi.Room", "Room")
-                        .WithMany("RatingAndReviews")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MotelHubApi.User", "User")
-                        .WithMany("RatingAndReviews")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Room");
 
@@ -1008,6 +826,23 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Navigation("Room");
                 });
 
+            modelBuilder.Entity("MotelHubApi.WorkOrder", b =>
+                {
+                    b.HasOne("MotelHubApi.User", "Creator")
+                        .WithMany("WorkOrders")
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("MotelHubApi.Room", "Room")
+                        .WithMany("WorkOrders")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Creator");
+
+                    b.Navigation("Room");
+                });
+
             modelBuilder.Entity("MotelHubApi.Area", b =>
                 {
                     b.Navigation("Photos");
@@ -1022,11 +857,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Navigation("Photos");
                 });
 
-            modelBuilder.Entity("MotelHubApi.MeterReading", b =>
-                {
-                    b.Navigation("Photos");
-                });
-
             modelBuilder.Entity("MotelHubApi.Role", b =>
                 {
                     b.Navigation("Users");
@@ -1038,34 +868,28 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.Navigation("Contracts");
 
-                    b.Navigation("MeterReadings");
-
                     b.Navigation("Photos");
 
-                    b.Navigation("RatingAndReviews");
-
                     b.Navigation("UserRooms");
+
+                    b.Navigation("WorkOrders");
                 });
 
             modelBuilder.Entity("MotelHubApi.User", b =>
                 {
+                    b.Navigation("Appointments");
+
                     b.Navigation("Areas");
 
-                    b.Navigation("CustomerAppointments");
-
                     b.Navigation("CustomerContracts");
-
-                    b.Navigation("HostAppointments");
-
-                    b.Navigation("HostContracts");
 
                     b.Navigation("OwnRooms");
 
                     b.Navigation("Photos");
 
-                    b.Navigation("RatingAndReviews");
-
                     b.Navigation("UserRooms");
+
+                    b.Navigation("WorkOrders");
                 });
 #pragma warning restore 612, 618
         }

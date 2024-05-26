@@ -23,28 +23,12 @@
     <None Remove="Interfaces\Services\" />
     <None Remove="Commons\Mappings\" />
     <None Remove="Features\" />
-    <None Remove="Features\Room\" />
     <None Remove="Interfaces\UnitOfWork\" />
-    <None Remove="Features\Room\Commands\" />
-    <None Remove="Features\Room\Queries\" />
-    <None Remove="Features\Room\Commands\CreateRoom\" />
-    <None Remove="Features\Room\Queries\GetByArea\" />
     <None Remove="Extensions\" />
-    <None Remove="Features\Role\" />
-    <None Remove="Features\Role\Commands\" />
-    <None Remove="Features\Role\Queries\" />
-    <None Remove="Features\Area\" />
-    <None Remove="Features\Area\Commands\" />
-    <None Remove="Features\Area\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Features\Room\Commands\NewFolder\" />
-    <Folder Include="Commons\Mappings\" />
     <Folder Include="Interfaces\UnitOfWork\" />
-    <Folder Include="Features\Room\Commands\Create\" />
-    <Folder Include="Features\Role\Commands\" />
-    <Folder Include="Features\Role\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />

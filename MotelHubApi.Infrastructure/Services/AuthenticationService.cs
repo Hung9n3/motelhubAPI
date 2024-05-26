@@ -1,11 +1,13 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AutoMapper;
+using Elastic.Clients.Elasticsearch;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -16,13 +18,11 @@ public class AuthenticationService : IAuthenticationService
 {
     private readonly UserManager<User> _userManager;
     private readonly ITokenService _tokenService;
-    private readonly IMapper _mapper;
 
-    public AuthenticationService(UserManager<User> userManager, ITokenService tokenService, IMapper mapper)
+    public AuthenticationService(UserManager<User> userManager, ITokenService tokenService)
 	{
         this._userManager = userManager;
         this._tokenService = tokenService;
-        this._mapper = mapper;
 	}
 
     public async Task<string> Login(LoginDto dto)
@@ -61,7 +61,14 @@ public class AuthenticationService : IAuthenticationService
 
     public async Task<User> Register(RegisterDto dto)
     {
-        var user = _mapper.Map<User>(dto);
+        var user = new User
+        {
+            Fullname = dto.Fullname,
+            PhoneNumber = dto.Phonenumber,
+            Address = dto.Address,
+            UserName = dto.Username,
+            RoleId = dto.RoleId,
+        };
         var result = await _userManager.CreateAsync(user, dto.Password);
         if(result.Succeeded)
         {
