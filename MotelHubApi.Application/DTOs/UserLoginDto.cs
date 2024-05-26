@@ -1,5 +1,5 @@
 ﻿using System;
 namespace MotelHubApi;
 
-public record LoginDto(string UsernameOrEmail, string Password);
+public record LoginDto(string username, string password);
 

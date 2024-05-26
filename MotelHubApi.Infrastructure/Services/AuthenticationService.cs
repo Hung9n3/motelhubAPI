@@ -29,20 +29,20 @@ public class AuthenticationService : IAuthenticationService
     {
         string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
         var user = default(User);
-        var isEmail = Regex.IsMatch(pattern, dto.UsernameOrEmail);
+        var isEmail = Regex.IsMatch(pattern, dto.username);
         if(isEmail)
         {
-            user = await _userManager.FindByEmailAsync(dto.UsernameOrEmail);
+            user = await _userManager.FindByEmailAsync(dto.username);
         }
         else
         {
-            user = await _userManager.FindByNameAsync(dto.UsernameOrEmail);
+            user = await _userManager.FindByNameAsync(dto.username);
         }
         if(user is null)
         {
             return null;
         }
-        var passwordCheck = await _userManager.CheckPasswordAsync(user, dto.Password);
+        var passwordCheck = await _userManager.CheckPasswordAsync(user, dto.password);
         if(!passwordCheck)
         {
             return null;

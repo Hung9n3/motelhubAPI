@@ -15,10 +15,10 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
 
     public IQueryable<T> Entities => _dbContext.Set<T>();
 
-    public virtual Task DeleteAsync(T entity)
+    public virtual async Task DeleteAsync(T entity)
     {
-        var a = _dbContext.Set<T>().Remove(entity);
-        return Task.CompletedTask;
+        _dbContext.Set<T>().Remove(entity);
+        await _dbContext.SaveChangesAsync();
     }
 
     public virtual async Task<List<T>> GetAllAsync()
@@ -28,7 +28,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
             .ToListAsync();
     }
 
-    public virtual async Task<T?> GetByIdAsync(int id, params Expression<Func<T, object>>[] selectors) 
+    public virtual async Task<T?> GetByIdAsync(int id, params Expression<Func<T, object>>[] selectors)
     {
         IQueryable<T> query = this.Entities;
         if (selectors is not null)
@@ -36,7 +36,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
             foreach (var selector in selectors)
             {
                 query = query.Include(selector);
-            } 
+            }
         }
         return await query.FirstOrDefaultAsync(x => x.Id == id);
     }
@@ -46,12 +46,16 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
         try
         {
             var existed = await this.Entities.FirstOrDefaultAsync(x => x.Id == entity.Id);
-            if(existed != null)
+            if (existed != null)
             {
                 this._dbContext.Update(entity);
+                await _dbContext.SaveChangesAsync();
+
                 return;
             }
             this._dbContext.Add(entity);
+            await _dbContext.SaveChangesAsync();
+
         }
         catch (Exception ex)
         {

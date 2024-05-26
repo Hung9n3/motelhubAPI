@@ -12,6 +12,7 @@ public static class ServiceExtensions
     public static void AddInfrastructureLayer(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddServices();
+        services.AddLogics();
         //services.AddElasticsearch(configuration);
     }
 
