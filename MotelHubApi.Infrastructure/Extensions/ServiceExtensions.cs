@@ -36,6 +36,7 @@ public static class ServiceExtensions
             .AddTransient<IContractLogic, ContractLogic>()
             .AddTransient<IBillLogic, BillLogic>()
             .AddTransient<IPhotoLogic, PhotoLogic>()
+            .AddTransient<INotificationLogic, NotificationLogic>()
             .AddTransient<IUserLogic, UserLogic>()
             .AddTransient<IAppointmentLogic, AppointmentLogic>()
             .AddTransient<IRoleLogic, RoleLogic>()
