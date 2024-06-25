@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MotelHubApi.Persistence;
 
@@ -11,9 +12,11 @@ using MotelHubApi.Persistence;
 namespace MotelHubApi.Persistence.Migrations
 {
     [DbContext(typeof(MotelHubSqlServerDbContext))]
-    partial class MotelHubSqlServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240625130310_update-photo")]
+    partial class updatephoto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -453,9 +456,6 @@ namespace MotelHubApi.Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
@@ -464,6 +464,9 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OwnerId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -475,7 +478,7 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Rooms");
                 });
@@ -570,6 +573,36 @@ namespace MotelHubApi.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("MotelHubApi.UserRoom", b =>
+                {
+                    b.Property<int>("MemberId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsEnd")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MemberId", "RoomId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("UserRoom");
                 });
 
             modelBuilder.Entity("MotelHubApi.WorkOrder", b =>
@@ -767,14 +800,14 @@ namespace MotelHubApi.Persistence.Migrations
                         .HasForeignKey("AreaId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("MotelHubApi.User", "Customer")
-                        .WithMany("CustomerRooms")
-                        .HasForeignKey("CustomerId")
+                    b.HasOne("MotelHubApi.User", "Owner")
+                        .WithMany("OwnRooms")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Area");
 
-                    b.Navigation("Customer");
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("MotelHubApi.User", b =>
@@ -785,6 +818,25 @@ namespace MotelHubApi.Persistence.Migrations
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("MotelHubApi.UserRoom", b =>
+                {
+                    b.HasOne("MotelHubApi.User", "Member")
+                        .WithMany("UserRooms")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MotelHubApi.Room", "Room")
+                        .WithMany("UserRooms")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("MotelHubApi.WorkOrder", b =>
@@ -829,6 +881,8 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.Navigation("Photos");
 
+                    b.Navigation("UserRooms");
+
                     b.Navigation("WorkOrders");
                 });
 
@@ -840,9 +894,11 @@ namespace MotelHubApi.Persistence.Migrations
 
                     b.Navigation("CustomerContracts");
 
-                    b.Navigation("CustomerRooms");
+                    b.Navigation("OwnRooms");
 
                     b.Navigation("Photos");
+
+                    b.Navigation("UserRooms");
 
                     b.Navigation("WorkOrders");
                 });

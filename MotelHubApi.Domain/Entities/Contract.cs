@@ -13,6 +13,7 @@ public class Contract : BaseEntity
     public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set;}
     public DateTime? CancelDate { get; set; }
+    public byte[]? CustomerSignature{ get; set; }
 
     public User? Customer { get; set; }
     public User? Host { get; set; }

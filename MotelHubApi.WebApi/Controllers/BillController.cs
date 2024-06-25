@@ -6,7 +6,7 @@ namespace MotelHubApi.WebApi;
 
 public class BillController : ApiControllerBase<Bill, IBillLogic>
 {
-    public BillController(BillLogic logic) : base(logic)
+    public BillController(IBillLogic logic) : base(logic)
     {
     }
 }

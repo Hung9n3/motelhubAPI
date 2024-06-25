@@ -36,6 +36,7 @@ public static class ServiceExtensions
             .AddTransient<IContractLogic, ContractLogic>()
             .AddTransient<IBillLogic, BillLogic>()
             .AddTransient<IPhotoLogic, PhotoLogic>()
+            .AddTransient<IWorkOrderLogic, WorkOrderLogic>()
             .AddTransient<INotificationLogic, NotificationLogic>()
             .AddTransient<IUserLogic, UserLogic>()
             .AddTransient<IAppointmentLogic, AppointmentLogic>()
@@ -73,9 +74,8 @@ public static class ServiceExtensions
     private static ConnectionSettings AddDefaultMappings(this ConnectionSettings settings)
     {
        return settings.DefaultMappingFor<Room>(r => r
-       .Ignore(x => x.Photos).Ignore(x => x.Appointments).Ignore(x => x.Members)
-       .Ignore(x => x.Contracts).Ignore(x => x.DomainEvents).Ignore(x => x.Owner)
-       .Ignore(x => x.UserRooms));
+       .Ignore(x => x.Contracts).Ignore(x => x.DomainEvents).Ignore(x => x.Customer)
+       .Ignore(x => x.WorkOrders));
     }
 
     private static void CreateIndex<TEntity>(this IElasticClient client, string indexName) where TEntity : class, IEntity

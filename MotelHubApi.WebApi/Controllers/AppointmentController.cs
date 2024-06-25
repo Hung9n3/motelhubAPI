@@ -8,7 +8,7 @@ namespace MotelHubApi.WebApi;
 
 public class AppointmentController : ApiControllerBase<Appointment, IAppointmentLogic>
 {
-    public AppointmentController(AppointmentLogic logic) : base(logic)
+    public AppointmentController(IAppointmentLogic logic) : base(logic)
     {
     }
 }

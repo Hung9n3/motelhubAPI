@@ -73,7 +73,7 @@ public abstract class ApiControllerBase<T, Logic> : ControllerBase
         try
         {
             await this._logic.SaveAsync(entity);
-            return Ok();
+            return Ok(entity.Id);
         }
         catch (Exception ex)
         {

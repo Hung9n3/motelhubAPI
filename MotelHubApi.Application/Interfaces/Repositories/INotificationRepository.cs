@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MotelHubApi.Entities;
 
 namespace MotelHubApi;
 

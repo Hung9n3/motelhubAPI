@@ -44,6 +44,7 @@ public static class ServiceExtensions
             .AddTransient<IPhotoRepository, PhotoRepository>()
             .AddTransient<INotificationRepository, NotificationRepository>()
             .AddTransient<IUserRepository, UserRepository>()
+            .AddTransient<IWorkOrderRepository, WorkOrderRepository>()
             .AddTransient<IAppointmentRepository, AppointmentRepository>()
             .AddTransient<IRoleRepository, RoleRepository>()
             ;

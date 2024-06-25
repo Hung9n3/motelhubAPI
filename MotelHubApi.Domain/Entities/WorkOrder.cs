@@ -13,4 +13,6 @@ public class WorkOrder : BaseEntity
 
     public Room? Room { get; set; }
     public User? Creator { get; set; }
+    public List<Photo> Photos { get; set; } = new List<Photo>();
+
 }

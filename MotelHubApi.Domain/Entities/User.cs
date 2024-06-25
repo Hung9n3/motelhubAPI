@@ -14,10 +14,8 @@ public class User : IdentityUser<int>, IEntity
     public int? RoleId { get; set; }
 
     public Role? Role { get; set; }
-    public List<Room> OwnRooms { get; set; } = new List<Room>();
+    public List<Room> CustomerRooms { get; set; } = new List<Room>();
     public List<WorkOrder> WorkOrders { get; set; }
-    public List<Room> RoomLivings { get; set; } = new List<Room>();
-    public List<UserRoom> UserRooms { get; set; } = new List<UserRoom>();
     public List<Contract> CustomerContracts { get; set; } = new List<Contract>();
     public List<Photo> Photos { get; set; } = new List<Photo>();
     public List<Area> Areas { get; set; } = new List<Area>();

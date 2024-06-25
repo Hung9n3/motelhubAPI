@@ -45,7 +45,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
     {
         try
         {
-            var existed = await this.Entities.FirstOrDefaultAsync(x => x.Id == entity.Id);
+            var existed = await this.Entities.AsNoTracking().FirstOrDefaultAsync(x => x.Id == entity.Id);
             if (existed != null)
             {
                 this._dbContext.Update(entity);

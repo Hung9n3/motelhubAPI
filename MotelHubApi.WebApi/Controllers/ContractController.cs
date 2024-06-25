@@ -6,7 +6,7 @@ namespace MotelHubApi.WebApi;
 
 public class ContractController : ApiControllerBase<Contract, IContractLogic>
 {
-    public ContractController(ContractLogic logic) : base(logic)
+    public ContractController(IContractLogic logic) : base(logic)
     {
     }
 }
