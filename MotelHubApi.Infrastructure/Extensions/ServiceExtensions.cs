@@ -13,7 +13,7 @@ public static class ServiceExtensions
     {
         services.AddServices();
         services.AddLogics();
-        services.AddElasticsearch(configuration);
+        //services.AddElasticsearch(configuration);
     }
 
     private static void AddServices(this IServiceCollection services)
@@ -24,7 +24,7 @@ public static class ServiceExtensions
                 .AddTransient<IEmailService, EmailService>()
                 .AddTransient<IAuthenticationService, AuthenticationService>()
                 .AddTransient<ITokenService, TokenService>()
-                .AddTransient<IElasticsearchService, ElasticsearchService>()
+                //.AddTransient<IElasticsearchService, ElasticsearchService>()
                 ;
     }
 

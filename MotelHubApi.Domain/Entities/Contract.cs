@@ -8,6 +8,7 @@ public class Contract : BaseEntity
     public string? Title { get; set; }
     public int? CustomerId { get; set; }
     public int? RoomId { get; set; }
+    public decimal? Price { get; set; }
     public bool IsHostConfirmed { get; set; }
     public bool IsCustomerConfirmed { get; set; }
     public DateTime? StartDate { get; set; }
