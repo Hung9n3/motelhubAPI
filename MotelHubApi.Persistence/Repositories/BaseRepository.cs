@@ -38,7 +38,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
                 query = query.Include(selector);
             }
         }
-        return await query.FirstOrDefaultAsync(x => x.Id == id);
+        return await query.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task SaveAsync(T entity)

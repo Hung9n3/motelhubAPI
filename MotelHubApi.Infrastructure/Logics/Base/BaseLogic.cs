@@ -36,7 +36,7 @@ public abstract class BaseLogic<T, Repository> : IBaseLogic<T> where T : IEntity
         return result;
     }
 
-    public Task SaveAsync(T entity)
+    public virtual Task SaveAsync(T entity)
     {
         if (entity == null) return Task.CompletedTask;
         var result = this._repository.SaveAsync(entity);

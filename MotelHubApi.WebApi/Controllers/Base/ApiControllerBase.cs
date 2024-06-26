@@ -68,7 +68,7 @@ public abstract class ApiControllerBase<T, Logic> : ControllerBase
     }
 
     [HttpPost()]
-    public async Task<IActionResult> Save([FromBody] T entity)
+    public virtual async Task<IActionResult> Save([FromBody] T entity)
     {
         try
         {

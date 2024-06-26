@@ -13,7 +13,7 @@ public static class ServiceExtensions
     {
         services.AddServices();
         services.AddLogics();
-        //services.AddElasticsearch(configuration);
+        services.AddElasticsearch(configuration);
     }
 
     private static void AddServices(this IServiceCollection services)
@@ -24,7 +24,7 @@ public static class ServiceExtensions
                 .AddTransient<IEmailService, EmailService>()
                 .AddTransient<IAuthenticationService, AuthenticationService>()
                 .AddTransient<ITokenService, TokenService>()
-                //.AddTransient<IElasticsearchService, ElasticsearchService>()
+                .AddTransient<IElasticsearchService, ElasticsearchService>()
                 ;
     }
 
@@ -63,9 +63,9 @@ public static class ServiceExtensions
 
             services.AddSingleton<IElasticClient>(client);
 
-            client.CreateIndex<Room>(elasticsearchConfig!.DefaultIndex);
+            client.CreateIndex<RoomIndex>(elasticsearchConfig!.DefaultIndex);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             return;
         }
@@ -73,18 +73,18 @@ public static class ServiceExtensions
 
     private static ConnectionSettings AddDefaultMappings(this ConnectionSettings settings)
     {
-       return settings.DefaultMappingFor<Room>(r => r
-       .Ignore(x => x.Contracts).Ignore(x => x.DomainEvents).Ignore(x => x.Customer)
-       .Ignore(x => x.WorkOrders));
+       return settings.DefaultMappingFor<Room>(r => r.Ignore(x => x.Contracts)
+                                                     .Ignore(x => x.Area)
+                                                     .Ignore(x => x.Customer)
+                                                     .Ignore(x => x.DomainEvents)
+                                                     .Ignore(x => x.WorkOrders)
+                                                     .Ignore(x => x.Photos)
+                                                     .Ignore(x => x.Appointments)
+                                                     );
     }
 
     private static void CreateIndex<TEntity>(this IElasticClient client, string indexName) where TEntity : class, IEntity
     {
-        var pingResponse = client.Ping();
-        if(!pingResponse.IsValid)
-        {
-
-        }
         if (!client.Indices.Exists(indexName).Exists)
         {
            var response = client.Indices.Create(indexName, i => i.Map<TEntity>(r => r.AutoMap()));
