@@ -13,7 +13,7 @@ public static class ServiceExtensions
     {
         services.AddServices();
         services.AddLogics();
-        //services.AddElasticsearch(configuration);
+        services.AddElasticsearch(configuration);
     }
 
     private static void AddServices(this IServiceCollection services)

@@ -24,5 +24,20 @@ public class RoomController : ApiControllerBase<Room, IRoomLogic>
             return BadRequest(ex.Message);
         }
     }
+
+    [HttpPost("sync")]
+    public async Task<IActionResult> Sync()
+    {
+        try
+        {
+            await base._logic.Sync();
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+    }
 }
 

@@ -37,7 +37,7 @@ public abstract class ApiControllerBase<T, Logic> : ControllerBase
 
     }
 
-    [HttpGet("id")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
         try
@@ -53,7 +53,7 @@ public abstract class ApiControllerBase<T, Logic> : ControllerBase
     }
 
     [HttpDelete()]
-    public async Task<IActionResult> GetById([FromBody] T entity)
+    public async Task<IActionResult> Delete([FromBody] T entity)
     {
         try
         {
